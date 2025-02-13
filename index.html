@@ -47,11 +47,87 @@
                 attribution: '&copy; OpenStreetMap contributors'
             }).addTo(map);
 
-            const data = [
-                { Ref: "Gautam2024", Year: "2023/01", Grid: "India, Rajasthan", Latitude: 26.1269, Longitude: 75.0315, "f (Hz)": 3.5, Duration: "Hours", "Propagation": { "Total distance": 300 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024.png" },
-                { Ref: "ESO2024", Year: "2021/08", Grid: "GB, Scotland", Latitude: 57.4253, Longitude: -4.2641, "f (Hz)": 8, Duration: "25 s", "Propagation": { "Total distance": 200 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024.png" },
-                { Ref: "Wang2022", Year: "2020/07", Grid: "Virginia, USA", Latitude: 37.5258, Longitude: -77.4428, "f (Hz)": 22, Duration: "Minutes", "Propagation": { "Total distance": 150 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022.png" },
-                { Ref: "Sun2025", Year: "2019/08", Grid: "UK", Latitude: 53.885, Longitude: -1.7904, "f (Hz)": 9, Duration: "30 ms", "Propagation": { "Total distance": 120 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025.png" }
+            const data = [{
+                Ref: "Gautam2024",
+                Year: "2023/01",
+                Grid: "India, Rajasthan",
+                Latitude: 26.1269,
+                Longitude: 75.0315,
+                "f (Hz)": 3.5,
+                Duration: "Hours",
+                "Propagation": {
+                    "Total distance": 300
+                },
+                Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Field_4: "Field_4",
+                Field_5: "Field_5",
+                Field_6: "Field_6",
+                Link_1: "http:www.google.com"
+            },
+            {
+                Ref: "ESO2024",
+                Year: "2021/08",
+                Grid: "GB, Scotland",
+                Latitude: 57.4253,
+                Longitude: -4.2641,
+                "f (Hz)": 8,
+                Duration: "25 s",
+                "Propagation": {
+                    "Total distance": 200
+                },
+                Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Field_4: "Field_4",
+                Field_5: "Field_5",
+                Field_6: "Field_6",
+                Link_1: "http:www.google.com"
+
+            },
+            {
+                Ref: "Wang2022",
+                Year: "2020/07",
+                Grid: "Virginia, USA",
+                Latitude: 37.5258,
+                Longitude: -77.4428,
+                "f (Hz)": 22,
+                Duration: "Minutes",
+                "Propagation": {
+                    "Total distance": 150
+                },
+                Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Field_4: "Field_4",
+                Field_5: "Field_5",
+                Field_6: "Field_6",
+                Link_1: "http:www.google.com"
+            },
+            {
+                Ref: "Sun2025",
+                Year: "2019/08",
+                Grid: "UK",
+                Latitude: 53.885,
+                Longitude: -1.7904,
+                "f (Hz)": 9,
+                Duration: "30 ms",
+                "Propagation": {
+                    "Total distance": 120
+                },
+                Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Field_4: "Field_4",
+                Field_5: "Field_5",
+                Field_6: "Field_6",
+                Link_1: "http:www.google.com"
+            }
             ];
 
             data.forEach(point => {
@@ -66,7 +142,16 @@
                             <strong>Grid:</strong> ${point.Grid}<br>
                             <strong>Frequency:</strong> ${point["f (Hz)"]} Hz<br>
                             <strong>Duration:</strong> ${point.Duration}<br>
-                            <img src="${point.Image}" alt="${point.Ref}" style="width: 100px; cursor: pointer;" onclick="showImage('${point.Image}')">
+                            <img src="${point.Image}" alt="${point.Ref}" style="width: 100px; cursor: pointer;" onclick="showImage('${point.Image}')"><br>
+                            <strong>Field_1:</strong> ${point.Field_1}<br>
+                            <strong>Field_2:</strong> ${point.Field_2}<br>
+                            <strong>Field_3:</strong> ${point.Field_3}<br>
+                            <strong>Field_4:</strong> ${point.Field_4}<br>
+                            <strong>Field_5:</strong> ${point.Field_5}<br>
+                            <strong>Field_6:</strong> ${point.Field_6}<br>
+                            <strong>Link_1:</strong> <a href="${point.Link_1}" target="_blank">${point.Link_1}</a><br>
+
+
                         `)
                         .openOn(map);
 
