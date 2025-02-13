@@ -1,0 +1,101 @@
+{
+    "data": [
+        {
+            "Ref": "Gautam2024",
+            "Year": "2023/01",
+            "Grid": "India, Rajasthan",
+            "Propagation": {
+                "Distance to responsible asset": "176 km",
+                "Total distance": "300 km Approx."
+            },
+            "Geography": "26°07'36.9\"N 75°01'54.5\"E",
+            "Tech": "PV",
+            "Trigger": "~",
+            "f (Hz)": 3.5,
+            "Duration": "Hours",
+            "Waveform": "",
+            "Line Trip": "No",
+            "Gen Trip": "No",
+            "Data Source": {
+                "1": "PMU",
+                "2": "Signal normalization",
+                "3": "Time-response simulations with EMT models."
+            },
+            "Analysis": {
+                "Causes": "Different PPC technologies; slow polling rates of PQ measurement; Interactions of PI controls; small dead-band of voltage ride-through.",
+                "Mitigation": "Retuning"
+            }
+        },
+        {
+            "Ref": "ESO2024",
+            "Year": "2021/08",
+            "Grid": "GB, Scotland",
+            "Propagation": {
+                "Distance to responsible asset": "~",
+                "Total distance": "Contained in Scotland"
+            },
+            "Geography": "57°25'30.8\"N 4°15'47.8\"W",
+            "Tech": "WF",
+            "Trigger": "~",
+            "f (Hz)": 8,
+            "Duration": "25 s",
+            "Waveform": "",
+            "Line Trip": "No",
+            "Gen Trip": "Yes",
+            "Data Source": {
+                "1": "PMU",
+                "2": "~",
+                "3": "Time response simulations with EMT models (TOTEM Project)"
+            },
+            "Analysis": {
+                "Causes": "A particular asset was the major contributor.",
+                "Mitigation": "Mitigation measures in the asset. Retuning of voltage controllers in other assets and changes to protection settings."
+            }
+        },
+        {
+            "Ref": "Wang2022",
+            "Year": "2020/07",
+            "Grid": "Virginia, USA",
+            "Propagation": {
+                "Distance to responsible asset": "~",
+                "Total distance": "~"
+            },
+            "Geography": "37°31'32.7\"N 77°26'54.1\"W",
+            "Tech": "PV",
+            "Trigger": "Daylight hours",
+            "f (Hz)": 22,
+            "Duration": "Minutes",
+            "Waveform": "",
+            "Line Trip": "No",
+            "Gen Trip": "No",
+            "Data Source": {
+                "1": "PMU; synchrophasor.",
+                "2": "Spectrogram; power spectral density."
+            },
+            "Analysis": {
+                "Causes": "Active power-power factor control.",
+                "Mitigation": "~"
+            }
+        },
+        {
+            "Ref": "Sun2025",
+            "Year": "2019/08",
+            "Grid": "UK",
+            "Propagation": {
+                "Distance to responsible asset": "120 km approx",
+                "Total distance": "Propagated across England, Wales, and some parts of Scotland."
+            },
+            "Geography": "53°53′6″ N 1°47′27.6″ E",
+            "Tech": "WF, CC",
+            "Trigger": "Lightning",
+            "f (Hz)": 9,
+            "Duration": "30 ms",
+            "Waveform": "",
+            "Line Trip": "Yes",
+            "Gen Trip": "Yes",
+            "Data Source": {
+                "1": "PMU Data"
+            }
+        }
+    ]
+}
