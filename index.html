@@ -12,11 +12,33 @@
             height: 600px;
             width: 100%;
         }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #imageModal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
     </style>
 </head>
 
 <body>
+    <h1 style="text-align: center;">Oscillation database</h1>
     <div id="map"></div>
+    <div id="imageModal" onclick="this.style.display='none'">
+        <img id="modalImage" src="" alt="Imagen ampliada">
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const map = L.map('map').setView([20, 0], 2);
@@ -26,10 +48,10 @@
             }).addTo(map);
 
             const data = [
-                { Ref: "Gautam2024", Year: "2023/01", Grid: "India, Rajasthan", Latitude: 26.1269, Longitude: 75.0315, "f (Hz)": 3.5, Duration: "Hours", "Propagation": { "Total distance": 300 }, Image: "https://via.placeholder.com/150" },
-                { Ref: "ESO2024", Year: "2021/08", Grid: "GB, Scotland", Latitude: 57.4253, Longitude: -4.2641, "f (Hz)": 8, Duration: "25 s", "Propagation": { "Total distance": 200 }, Image: "https://via.placeholder.com/150" },
+                { Ref: "Gautam2024", Year: "2023/01", Grid: "India, Rajasthan", Latitude: 26.1269, Longitude: 75.0315, "f (Hz)": 3.5, Duration: "Hours", "Propagation": { "Total distance": 300 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024.png" },
+                { Ref: "ESO2024", Year: "2021/08", Grid: "GB, Scotland", Latitude: 57.4253, Longitude: -4.2641, "f (Hz)": 8, Duration: "25 s", "Propagation": { "Total distance": 200 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024.png" },
                 { Ref: "Wang2022", Year: "2020/07", Grid: "Virginia, USA", Latitude: 37.5258, Longitude: -77.4428, "f (Hz)": 22, Duration: "Minutes", "Propagation": { "Total distance": 150 }, Image: "https://via.placeholder.com/150" },
-                { Ref: "Sun2025", Year: "2019/08", Grid: "UK", Latitude: 53.885, Longitude: -1.7904, "f (Hz)": 9, Duration: "30 ms", "Propagation": { "Total distance": 120 }, Image: "https://via.placeholder.com/150" }
+                { Ref: "Sun2025", Year: "2019/08", Grid: "UK", Latitude: 53.885, Longitude: -1.7904, "f (Hz)": 9, Duration: "30 ms", "Propagation": { "Total distance": 120 }, Image: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025.png" }
             ];
 
             data.forEach(point => {
@@ -44,7 +66,7 @@
                             <strong>Grid:</strong> ${point.Grid}<br>
                             <strong>Frequency:</strong> ${point["f (Hz)"]} Hz<br>
                             <strong>Duration:</strong> ${point.Duration}<br>
-                            <img src="${point.Image}" alt="Imagen" style="width:100px;height:auto;">
+                            <img src="${point.Image}" alt="${point.Ref}" style="width: 100px; cursor: pointer;" onclick="showImage('${point.Image}')">
                         `)
                         .openOn(map);
 
@@ -57,7 +79,15 @@
                 });
             });
         });
+
+        function showImage(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modal.style.display = 'flex';
+        }
     </script>
+    <p style="text-align: center;">Click on a point to get more info. Click on the image on the tooltip to resize.</p>
 </body>
 
 </html>
