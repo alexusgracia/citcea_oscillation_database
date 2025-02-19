@@ -288,6 +288,7 @@
                     name: points[key].Name,
                     lat: coord.lat,
                     lng: coord.lng,
+                    guilty: points[key].Guilty  // Agregamos la propiedad
                 };
             });
 
@@ -317,7 +318,7 @@
                 .attr("cx", (d) => xScale(d.lng))
                 .attr("cy", (d) => yScale(d.lat))
                 .attr("r", 5)
-                .attr("fill", "blue");
+                .attr("fill", (d) => d.guilty ? "red" : "blue");
 
             // Agrega etiquetas (opcional)
             g.selectAll("text.label")
