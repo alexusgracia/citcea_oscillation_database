@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscillation propagation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #imageModal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Oscillation database</h1>
+    <div id="map"></div>
+    <div id="imageModal" onclick="this.style.display='none'">
+        <img id="modalImage" src="" alt="Imagen ampliada">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const map = L.map('map').setView([20, 0], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            const data = [{
+                Ref: "Gautam2024",
+                Year: "2023/01",
+                Grid: "India, Rajasthan",
+                Latitude: 26.1269,
+                Longitude: 75.0315,
+                "f (Hz)": 3.5,
+                Duration: "Hours",
+                "Propagation": {
+                    "Total distance": 300
+                },
+                Image_1: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024.png",
+                Image_2: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024_unifilar.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Link_1: "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
+                "Points": {
+                    "Point_1": {
+                        "Name": "Fatehgarh I",
+                        "Coordinates": "26°51'8.48\"N, 71°30'34.29\"E",
+                        "Guilty": true
+                    },
+                    "Point_2": {
+                        "Name": "Fatehgarh II",
+                        "Coordinates": "26°42'13.5936\"N, 71°16'19.9956\"E",
+                        "Guilty": false
+                    },
+                    "Point_3": {
+                        "Name": "Bhadla",
+                        "Coordinates": "27°25'10''N, 72°04'20''E",
+                        "Guilty": false
+                    },
+                    "Point_4": {
+                        "Name": "Bhadla-II",
+                        "Coordinates": "27°30'57.9\"N, 72°28'45.4\"E",
+                        "Guilty": false
+                    },
+                    "Point_5": {
+                        "Name": "Bikaner",
+                        "Coordinates": "28°14'57''N, 73°22'55''E",
+                        "Guilty": false
+                    }
+                }
+            },
+            {
+                Ref: "ESO2024",
+                Year: "2021/08",
+                Grid: "GB, Scotland",
+                Latitude: 57.4253,
+                Longitude: -4.2641,
+                "f (Hz)": 8,
+                Duration: "25 s",
+                "Propagation": {
+                    "Total distance": 200
+                },
+                Image_1: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024.png",
+                Image_2: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024_map.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Link_1: "https://www.neso.energy/document/319056/download",
+                "Points": {}
+            },
+            {
+                Ref: "Wang2022",
+                Year: "2020/07",
+                Grid: "Virginia, USA",
+                Latitude: 37.5258,
+                Longitude: -77.4428,
+                "f (Hz)": 22,
+                Duration: "Minutes",
+                "Propagation": {
+                    "Total distance": 150
+                },
+                Image_1: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022.png",
+                Image_2: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022_map.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Link_1: "https://ieeexplore.ieee.org/abstract/document/9916830",
+                "Points": {}
+            },
+            {
+                Ref: "Sun2025",
+                Year: "2019/08",
+                Grid: "UK",
+                Latitude: 53.885,
+                Longitude: -1.7904,
+                "f (Hz)": 9,
+                Duration: "30 ms",
+                "Propagation": {
+                    "Total distance": 120
+                },
+                Image_1: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025.png",
+                Image_2: "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025_map.png",
+                Field_1: "Field_1",
+                Field_2: "Field_2",
+                Field_3: "Field_3",
+                Link_1: "https://ieeexplore.ieee.org/document/10859154",
+                "Points": {}
+            }
+            ];
+
+            data.forEach(point => {
+                const marker = L.marker([point.Latitude, point.Longitude]).addTo(map);
+
+                marker.on('click', function () {
+                    L.popup()
+                        .setLatLng([point.Latitude, point.Longitude])
+                        .setContent(`
+                            <strong>${point.Ref}</strong><br>
+                            <strong>Year:</strong> ${point.Year}<br>
+                            <strong>Grid:</strong> ${point.Grid}<br>
+                            <strong>Frequency:</strong> ${point["f (Hz)"]} Hz<br>
+                            <strong>Duration:</strong> ${point.Duration}<br>
+                            <img src="${point.Image_1}" alt="${point.Ref}" style="width: 100px; cursor: pointer;" onclick="showImage('${point.Image_1}')"><br>
+                            <img src="${point.Image_2}" alt="${point.Ref}" style="width: 100px; cursor: pointer;" onclick="showImage('${point.Image_2}')"><br>
+                            <strong>Field_1:</strong> ${point.Field_1}<br>
+                            <strong>Field_2:</strong> ${point.Field_2}<br>
+                            <strong>Field_3:</strong> ${point.Field_3}<br>
+                            <strong>Link_1:</strong> <a href="${point.Link_1}" target="_blank">${point.Link_1}</a><br>
+
+
+                        `)
+                        .openOn(map);
+
+                    L.circle([point.Latitude, point.Longitude], {
+                        color: 'blue',
+                        fillColor: 'blue',
+                        fillOpacity: 0.2,
+                        radius: point.Propagation["Total distance"] * 1000 // Convertir km a metros
+                    }).addTo(map);
+                });
+            });
+        });
+
+        function showImage(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modal.style.display = 'flex';
+        }
+    </script>
+    <p style="text-align: center;">Click on a point to get more info. Click on the image on the tooltip to resize.</p>
+</body>
+
+</html>
