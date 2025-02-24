@@ -1,0 +1,37 @@
+# Ignorar entorno virtual
+version2/venv/
+
+# Archivos de configuración de entornos de desarrollo
+.idea/
+
+# Archivos de caché y temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de logs
+*.log
+
+# Archivos de dependencias
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configuraciones de entornos virtuales
+.env
+.venv
+
+# Archivos de bases de datos temporales
+*.sqlite3
+
+# Configuración de editor
+.vscode/
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
