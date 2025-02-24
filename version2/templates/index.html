@@ -25,7 +25,8 @@
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    fetch('/data')
+    //fetch('/data')
+    fetch('/data/oscillation_data.json')
         .then(response => response.json())
         .then(data => {
             data.forEach(entry => {
