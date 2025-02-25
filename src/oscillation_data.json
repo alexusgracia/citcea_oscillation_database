@@ -42,7 +42,21 @@
         "Coordinates": "28.249167, 73.381944",
         "Guilty": false
       }
-    }
+    },
+    "Connections": [
+      { "From": "Fatehgarh I", "To": "Fatehgarh II", "Color": "red" },
+      { "From": "Fatehgarh II", "To": "Bhadla", "Color": "orange" },
+      { "From": "Fatehgarh II", "To": "Bhadla-II", "Color": "orange" },
+      { "From": "Bhadla", "To": "Bhadla-II", "Color": "red" },
+      { "From": "Bhadla", "To": "Bikaner", "Color": "orange" },
+      { "From": "Bhadla-II", "To": "Bikaner", "Color": "orange" },
+
+      { "From": "Fatehgarh I", "To": "1", "Color": "blue" },
+      { "From": "Fatehgarh II", "To": "1", "Color": "blue" },
+      { "From": "Bhadla", "To": "1", "Color": "blue" },
+      { "From": "Bhadla-II", "To": "1", "Color": "blue" },
+      { "From": "Bikaner", "To": "1", "Color": "blue" }
+    ]
   },
   {
     "id": 2,
