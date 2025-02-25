@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-<h1>Mapa de Oscilaciones</h1>
+<h1>Oscillations map</h1>
 <div id="map"></div>
 <script>
     var map = L.map('map').setView([20, 0], 2);
@@ -25,8 +25,8 @@
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    //fetch('/data')
-    fetch('/data/oscillation_data.json')
+    fetch('/data')
+    //fetch('/data/oscillation_data.json')
         .then(response => response.json())
         .then(data => {
             data.forEach(entry => {
