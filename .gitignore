@@ -1,5 +1,7 @@
+#Ignorar secrets
+
 # Ignorar entorno virtual
-version2/venv/
+src/venv/
 
 # Archivos de configuración de entornos de desarrollo
 .idea/

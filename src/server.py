@@ -1,5 +1,10 @@
+import os
 from flask import Flask, render_template, jsonify
+from dotenv import load_dotenv
 import json
+
+# Cargar las variables del archivo .env
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -16,4 +21,6 @@ def get_data():
     return jsonify(data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port_flask = int(os.getenv("FLASK_RUN_PORT", 8080))	# Toma el puerto del .env o usa 8080 por defecto
+    host_flask=os.getenv("FLASK_RUN_HOST", "0.0.0.0")	# Toma el host del .env o usa 0.0.0.0 por defecto
+    app.run(debug=True, host=host_flask, port=port_flask)
