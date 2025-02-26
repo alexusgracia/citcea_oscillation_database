@@ -60,29 +60,36 @@
         .then(response => response.json())
         .then(data => {
             data.forEach(entry => {
-                if(debug) console.log(entry)
+                if (debug) console.log(entry);
                 let coords = entry.coordinates.split(',').map(Number);
 
-                // Obtener todas las imágenes disponibles en el nodo
+                // Obtener todas las imágenes del array images
                 let imageHTML = "";
-                for (let key in entry) {
-                    if (key.startsWith("image_")) {
-                        // language=HTML
-                        imageHTML += `<img src="${entry[key]}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${entry[key]}')" alt=""><br>`;
-                    }
+                if (Array.isArray(entry.images)) {
+                    entry.images.forEach(img => {
+                        imageHTML += `<img src="${img}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${img}')" alt=""><br>`;
+                    });
                 }
 
                 // Construcción del popup con toda la información y todas las imágenes
-                let popupContent;
-                popupContent = `<b>Grid:</b> ${entry.grid}<br>
-                                    <b>Id: ${entry.id}</b><br>
-                                    <b>Paper: ${entry.reference}</b><br>
+                let popupContent = `<b>Grid:</b> ${entry.grid}<br>
+                                    <b>Id:</b> ${entry.id}<br>
+                                    <b>Paper:</b> ${entry.reference}<br>
                                     <b>Year:</b> ${entry.year}<br>
                                     <b>Frequency:</b> ${entry.frequency} Hz<br>
                                     <b>Duration:</b> ${entry.duration}<br>
-                                    <b>Total Distance:</b> ${entry.propagation["total_distance"]} km<br>
-                                    <a href="${entry.link_1}" target="_blank">More info</a><br>
-                                    ${imageHTML}`;
+                                    <b>Total Distance:</b> ${entry.propagation.total_distance} km<br>`;
+
+                // Agregar los enlaces si existen
+                if (Array.isArray(entry.links) && entry.links.length > 0) {
+                    popupContent += `<b>More info:</b> `;
+                    entry.links.forEach((link, index) => {
+                        popupContent += `<a href="${link}" target="_blank">[Link ${index + 1}]</a> `;
+                    });
+                    popupContent += `<br>`;
+                }
+
+                popupContent += `${imageHTML}`;
 
                 let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
 
@@ -108,9 +115,9 @@
                         .bindPopup(popupContent);
                     activeLayers[entry.reference].push(pointMarkers[entry.id]);
 
-                    if (entry.points && Object.keys(entry.points).length > 0) {
-                        Object.values(entry.points).forEach(point => {
-                            let pointCoords = point.coordinates.split(', ').map(Number);
+                    if (Array.isArray(entry.points) && entry.points.length > 0) {
+                        entry.points.forEach(point => {
+                            let pointCoords = point.coordinates.split(',').map(Number);
                             let markerColor = point.guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🟢 verde si no
 
                             let subMarker = L.circleMarker(pointCoords, {
@@ -136,25 +143,25 @@
                         });
 
                         // Verificar que Connections existe y es un array de objetos con color
-                        if (entry.connections && Array.isArray(entry.connections)) {
+                        if (Array.isArray(entry.connections) && entry.connections.length > 0) {
                             entry.connections.forEach(connection => {
                                 let pointA = connection.from;
                                 let pointB = connection.to;
                                 let color = connection.color || 'black'; // Color por defecto
 
-                                if (debug) console.log(`Intentando conectar ${pointA} con ${pointB} en color ${color}`); // Depuración
+                                if (debug) console.log(`Intentando conectar ${pointA} con ${pointB} en color ${color}`);
 
                                 // Verificar si los puntos existen antes de dibujar la línea
                                 if (pointMarkers[pointA] && pointMarkers[pointB]) {
                                     let latlngA = pointMarkers[pointA].getLatLng();
                                     let latlngB = pointMarkers[pointB].getLatLng();
 
-                                    if (debug) console.log(`Conectando ${pointA} con ${pointB} en color ${color}`); // Depuración
+                                    if (debug) console.log(`Conectando ${pointA} con ${pointB} en color ${color}`);
 
                                     let connLine = L.polyline([latlngA, latlngB], { color: color, weight: 2 }).addTo(map);
                                     activeLayers[entry.reference].push(connLine);
                                 } else {
-                                    if (debug) console.warn(`No se pudo conectar ${pointA} con ${pointB} porque uno de los puntos no existe.`); // Depuración
+                                    if (debug) console.warn(`No se pudo conectar ${pointA} con ${pointB} porque uno de los puntos no existe.`);
                                 }
                             });
                         }
@@ -191,5 +198,6 @@
 
     map.on('click', clearMap);
 </script>
+
 </body>
 </html>
