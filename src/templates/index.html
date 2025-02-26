@@ -44,10 +44,13 @@
 </div>
 
 <script>
-    var map = L.map('map').setView([20, 0], 2);
-    var activeLayers = {}; // Para rastrear nodos secundarios y líneas
-    var activeCircle = null; // Para el círculo de selección
-    var activeLabels = []; // Para almacenar los nombres de los nodos secundarios
+    let debug = true
+    /* global L */
+    /** @type {import("leaflet").Map} */
+    let map = L.map('map').setView([20, 0], 2);
+    let activeLayers = {}; // Para rastrear nodos secundarios y líneas
+    let activeCircle = null; // Para el círculo de selección
+    let activeLabels = []; // Para almacenar los nombres de los nodos secundarios
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
@@ -57,12 +60,13 @@
         .then(response => response.json())
         .then(data => {
             data.forEach(entry => {
-                let coords = entry.Coordinates.split(', ').map(Number);
+                if(debug) console.log(entry)
+                let coords = entry.coordinates.split(',').map(Number);
 
                 // Obtener todas las imágenes disponibles en el nodo
                 let imageHTML = "";
                 for (let key in entry) {
-                    if (key.startsWith("Image_")) {
+                    if (key.startsWith("image_")) {
                         // language=HTML
                         imageHTML += `<img src="${entry[key]}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${entry[key]}')" alt=""><br>`;
                     }
@@ -70,14 +74,14 @@
 
                 // Construcción del popup con toda la información y todas las imágenes
                 let popupContent;
-                popupContent = `<b>Grid:</b> ${entry.Grid}<br>
+                popupContent = `<b>Grid:</b> ${entry.grid}<br>
                                     <b>Id: ${entry.id}</b><br>
-                                    <b>Paper: ${entry.Ref}</b><br>
-                                    <b>Year:</b> ${entry.Year}<br>
-                                    <b>Frequency:</b> ${entry["f (Hz)"]} Hz<br>
-                                    <b>Duration:</b> ${entry.Duration}<br>
-                                    <b>Total Distance:</b> ${entry.Propagation["Total distance"]} km<br>
-                                    <a href="${entry.Link_1}" target="_blank">More info</a><br>
+                                    <b>Paper: ${entry.reference}</b><br>
+                                    <b>Year:</b> ${entry.year}<br>
+                                    <b>Frequency:</b> ${entry.frequency} Hz<br>
+                                    <b>Duration:</b> ${entry.duration}<br>
+                                    <b>Total Distance:</b> ${entry.propagation["total_distance"]} km<br>
+                                    <a href="${entry.link_1}" target="_blank">More info</a><br>
                                     ${imageHTML}`;
 
                 let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
@@ -95,35 +99,35 @@
                         fillOpacity: 0.3,
                         radius: 50000
                     }).addTo(map);
-                    activeLayers[entry.Ref] = [activeCircle];
+                    activeLayers[entry.reference] = [activeCircle];
 
                     let pointMarkers = {}; // Almacenar los marcadores de los nodos secundarios
 
                     // Registrar el nodo principal con su ID en `pointMarkers`
                     pointMarkers[entry.id] = L.marker(coords).addTo(map)
                         .bindPopup(popupContent);
-                    activeLayers[entry.Ref].push(pointMarkers[entry.id]);
+                    activeLayers[entry.reference].push(pointMarkers[entry.id]);
 
-                    if (entry.Points && Object.keys(entry.Points).length > 0) {
-                        Object.values(entry.Points).forEach(point => {
-                            let pointCoords = point.Coordinates.split(', ').map(Number);
-                            let markerColor = point.Guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🟢 verde si no
+                    if (entry.points && Object.keys(entry.points).length > 0) {
+                        Object.values(entry.points).forEach(point => {
+                            let pointCoords = point.coordinates.split(', ').map(Number);
+                            let markerColor = point.guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🟢 verde si no
 
                             let subMarker = L.circleMarker(pointCoords, {
                                 color: markerColor,
                                 fillColor: markerColor,
                                 fillOpacity: 0.9,
                                 radius: 6
-                            }).addTo(map).bindPopup(`<b>${point.Name}</b>`);
+                            }).addTo(map).bindPopup(`<b>${point.name}</b>`);
 
-                            activeLayers[entry.Ref].push(subMarker);
-                            pointMarkers[point.Name] = subMarker; // Guardamos el marcador
+                            activeLayers[entry.reference].push(subMarker);
+                            pointMarkers[point.name] = subMarker; // Guardamos el marcador
 
                             // Crear etiqueta encima del nodo secundario
                             let label = L.marker(pointCoords, {
                                 icon: L.divIcon({
                                     className: 'label',
-                                    html: `<b>${point.Name}</b>`,
+                                    html: `<b>${point.name}</b>`,
                                     iconSize: [80, 20]
                                 })
                             }).addTo(map);
@@ -132,25 +136,25 @@
                         });
 
                         // Verificar que Connections existe y es un array de objetos con color
-                        if (entry.Connections && Array.isArray(entry.Connections)) {
-                            entry.Connections.forEach(connection => {
-                                let pointA = connection.From;
-                                let pointB = connection.To;
-                                let color = connection.Color || 'black'; // Color por defecto
+                        if (entry.connections && Array.isArray(entry.connections)) {
+                            entry.connections.forEach(connection => {
+                                let pointA = connection.from;
+                                let pointB = connection.to;
+                                let color = connection.color || 'black'; // Color por defecto
 
-                                console.log(`Intentando conectar ${pointA} con ${pointB} en color ${color}`); // Depuración
+                                if (debug) console.log(`Intentando conectar ${pointA} con ${pointB} en color ${color}`); // Depuración
 
                                 // Verificar si los puntos existen antes de dibujar la línea
                                 if (pointMarkers[pointA] && pointMarkers[pointB]) {
                                     let latlngA = pointMarkers[pointA].getLatLng();
                                     let latlngB = pointMarkers[pointB].getLatLng();
 
-                                    console.log(`Conectando ${pointA} con ${pointB} en color ${color}`); // Depuración
+                                    if (debug) console.log(`Conectando ${pointA} con ${pointB} en color ${color}`); // Depuración
 
                                     let connLine = L.polyline([latlngA, latlngB], { color: color, weight: 2 }).addTo(map);
-                                    activeLayers[entry.Ref].push(connLine);
+                                    activeLayers[entry.reference].push(connLine);
                                 } else {
-                                    console.warn(`No se pudo conectar ${pointA} con ${pointB} porque uno de los puntos no existe.`); // Depuración
+                                    if (debug) console.warn(`No se pudo conectar ${pointA} con ${pointB} porque uno de los puntos no existe.`); // Depuración
                                 }
                             });
                         }

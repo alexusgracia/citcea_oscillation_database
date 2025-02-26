@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_from_directory
 from dotenv import load_dotenv
 import json
 
@@ -19,6 +19,10 @@ def index():
 @app.route("/data")
 def get_data():
     return jsonify(data)
+
+@app.route('/images/<path:filename>')
+def static_files(filename):
+    return send_from_directory('images', filename)
 
 if __name__ == "__main__":
     port_flask = int(os.getenv("FLASK_RUN_PORT", 8080))	# Toma el puerto del .env o usa 8080 por defecto

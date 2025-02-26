@@ -1,118 +1,118 @@
 [
   {
     "id": 1,
-    "Ref": "Gautam2024",
-    "Year": "2023/01",
-    "Grid": "India, Rajasthan",
-    "Coordinates": "26.1269, 75.0315",
-    "f (Hz)": 3.5,
-    "Duration": "Hours",
-    "Propagation": {
-      "Total distance": 300
+    "reference": "Gautam2024",
+    "year": "2023/01",
+    "grid": "India, Rajasthan",
+    "coordinates": "26.1269, 75.0315",
+    "frequency": 3.5,
+    "duration": "Hours",
+    "propagation": {
+      "total_distance": 300
     },
-    "Image_1": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024.png",
-    "Image_2": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Gautam2024_unifilar.png",
-    "Field_1": "Field_1",
-    "Field_2": "Field_2",
-    "Field_3": "Field_3",
-    "Link_1": "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
-    "Points": {
-      "Point_1": {
-        "Name": "Fatehgarh I",
-        "Coordinates": "26.8523556, 71.5095250",
-        "Guilty": true
+    "image_1": "images/Gautam2024.png",
+    "image_2": "images/Gautam2024_unifilar.png",
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "link_1": "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
+    "points": {
+      "point_1": {
+        "name": "Fatehgarh I",
+        "coordinates": "26.8523556, 71.5095250",
+        "guilty": true
       },
-      "Point_2": {
-        "Name": "Fatehgarh II",
-        "Coordinates": "26.703776, 71.272221",
-        "Guilty": false
+      "point_2": {
+        "name": "Fatehgarh II",
+        "coordinates": "26.703776, 71.272221",
+        "guilty": false
       },
-      "Point_3": {
-        "Name": "Bhadla",
-        "Coordinates": "27.419444, 72.072222",
-        "Guilty": false
+      "point_3": {
+        "name": "Bhadla",
+        "coordinates": "27.419444, 72.072222",
+        "guilty": false
       },
-      "Point_4": {
-        "Name": "Bhadla-II",
-        "Coordinates": "27.516083, 72.479278",
-        "Guilty": false
+      "point_4": {
+        "name": "Bhadla-II",
+        "coordinates": "27.516083, 72.479278",
+        "guilty": false
       },
-      "Point_5": {
-        "Name": "Bikaner",
-        "Coordinates": "28.249167, 73.381944",
-        "Guilty": false
+      "point_6": {
+        "name": "Bikaner",
+        "coordinates": "28.249167, 73.381944",
+        "guilty": false
       }
     },
-    "Connections": [
-      { "From": "Fatehgarh I", "To": "Fatehgarh II", "Color": "red" },
-      { "From": "Fatehgarh II", "To": "Bhadla", "Color": "orange" },
-      { "From": "Fatehgarh II", "To": "Bhadla-II", "Color": "orange" },
-      { "From": "Bhadla", "To": "Bhadla-II", "Color": "red" },
-      { "From": "Bhadla", "To": "Bikaner", "Color": "orange" },
-      { "From": "Bhadla-II", "To": "Bikaner", "Color": "orange" },
+    "connections": [
+      { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "red" },
+      { "from": "Fatehgarh II", "to": "Bhadla", "color": "orange" },
+      { "from": "Fatehgarh II", "to": "Bhadla-II", "color": "orange" },
+      { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
+      { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
+      { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
 
-      { "From": "Fatehgarh I", "To": "1", "Color": "blue" },
-      { "From": "Fatehgarh II", "To": "1", "Color": "blue" },
-      { "From": "Bhadla", "To": "1", "Color": "blue" },
-      { "From": "Bhadla-II", "To": "1", "Color": "blue" },
-      { "From": "Bikaner", "To": "1", "Color": "blue" }
+      { "from": "Fatehgarh I", "to": "1", "color": "blue" },
+      { "from": "Fatehgarh II", "to": "1", "color": "blue" },
+      { "from": "Bhadla", "to": "1", "color": "blue" },
+      { "from": "Bhadla-II", "to": "1", "color": "blue" },
+      { "from": "Bikaner", "to": "1", "color": "blue" }
     ]
   },
   {
     "id": 2,
-    "Ref": "ESO2024",
-    "Year": "2021/08",
-    "Grid": "GB, Scotland",
-    "Coordinates": "57.4253, -4.2641",
-    "f (Hz)": 8,
-    "Duration": "25 s",
-    "Propagation": {
-      "Total distance": 200
+    "reference": "ESO2024",
+    "year": "2021/08",
+    "grid": "GB, Scotland",
+    "coordinates": "57.4253, -4.2641",
+    "frequency": 8,
+    "duration": "25 s",
+    "propagation": {
+      "total_distance": 200
     },
-    "Image_1": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024.png",
-    "Image_2": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/ESO2024_map.png",
-    "Field_1": "Field_1",
-    "Field_2": "Field_2",
-    "Field_3": "Field_3",
-    "Link_1": "https://www.neso.energy/document/319056/download",
-    "Points": {}
+    "image_1": "images/ESO2024.png",
+    "image_2": "images/ESO2024_map.png",
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "link_1": "https://www.neso.energy/document/319056/download",
+    "points": {}
   },
   {
     "id": 3,
-    "Ref": "Wang2022",
-    "Year": "2020/07",
-    "Grid": "Virginia, USA",
-    "Coordinates": "37.5258, -77.4428",
-    "f (Hz)": 22,
-    "Duration": "Minutes",
-    "Propagation": {
-      "Total distance": 150
+    "reference": "Wang2022",
+    "year": "2020/07",
+    "grid": "Virginia, USA",
+    "coordinates": "37.5258, -77.4428",
+    "frequency": 22,
+    "duration": "Minutes",
+    "propagation": {
+      "total_distance": 150
     },
-    "Image_1": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022.png",
-    "Image_2": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Wang2022_map.png",
-    "Field_1": "Field_1",
-    "Field_2": "Field_2",
-    "Field_3": "Field_3",
-    "Link_1": "https://ieeexplore.ieee.org/abstract/document/9916830",
-    "Points": {}
+    "image_1": "images/Wang2022.png",
+    "image_2": "images/Wang2022_map.png",
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "link_1": "https://ieeexplore.ieee.org/abstract/document/9916830",
+    "points": {}
   },
   {
     "id": 4,
-    "Ref": "Sun2025",
-    "Year": "2019/08",
-    "Grid": "UK",
-    "Coordinates": "53.885, -1.7904",
-    "f (Hz)": 9,
-    "Duration": "30 ms",
-    "Propagation": {
-      "Total distance": 120
+    "reference": "Sun2025",
+    "year": "2019/08",
+    "grid": "UK",
+    "coordinates": "53.885, -1.7904",
+    "frequency": 9,
+    "duration": "30 ms",
+    "propagation": {
+      "total_distance": 120
     },
-    "Image_1": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025.png",
-    "Image_2": "https://raw.githubusercontent.com/alexusgracia/citcea_oscillation_database/refs/heads/main/images/Sun2025_map.png",
-    "Field_1": "Field_1",
-    "Field_2": "Field_2",
-    "Field_3": "Field_3",
-    "Link_1": "https://ieeexplore.ieee.org/document/10859154",
-    "Points": {}
+    "image_1": "images/Sun2025.png",
+    "image_2": "images/Sun2025_map.png",
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "link_1": "https://ieeexplore.ieee.org/document/10859154",
+    "points": {}
   }
 ]
