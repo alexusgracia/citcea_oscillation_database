@@ -1,18 +1,18 @@
 {
     "data": [
         {
-            "Ref": "Gautam2024",
-            "Year": "2023/01",
-            "Grid": "India, Rajasthan",
-            "Propagation": {
+            "reference": "Gautam2024",
+            "year": "2023/01",
+            "grid": "India, Rajasthan",
+            "propagation": {
                 "Distance to responsible asset": "176 km",
-                "Total distance": "300 km Approx."
+                "total_distance": "300 km Approx."
             },
             "Geography": "26°07'36.9\"N 75°01'54.5\"E",
             "Tech": "PV",
             "Trigger": "~",
-            "f (Hz)": 3.5,
-            "Duration": "Hours",
+            "frequency": 3.5,
+            "duration": "Hours",
             "Waveform": "",
             "Line Trip": "No",
             "Gen Trip": "No",
@@ -27,18 +27,18 @@
             }
         },
         {
-            "Ref": "ESO2024",
-            "Year": "2021/08",
-            "Grid": "GB, Scotland",
-            "Propagation": {
+            "reference": "ESO2024",
+            "year": "2021/08",
+            "grid": "GB, Scotland",
+            "propagation": {
                 "Distance to responsible asset": "~",
-                "Total distance": "Contained in Scotland"
+                "total_distance": "Contained in Scotland"
             },
             "Geography": "57°25'30.8\"N 4°15'47.8\"W",
             "Tech": "WF",
             "Trigger": "~",
-            "f (Hz)": 8,
-            "Duration": "25 s",
+            "frequency": 8,
+            "duration": "25 s",
             "Waveform": "",
             "Line Trip": "No",
             "Gen Trip": "Yes",
@@ -53,18 +53,18 @@
             }
         },
         {
-            "Ref": "Wang2022",
-            "Year": "2020/07",
-            "Grid": "Virginia, USA",
-            "Propagation": {
+            "reference": "Wang2022",
+            "year": "2020/07",
+            "grid": "Virginia, USA",
+            "propagation": {
                 "Distance to responsible asset": "~",
-                "Total distance": "~"
+                "total_distance": "~"
             },
             "Geography": "37°31'32.7\"N 77°26'54.1\"W",
             "Tech": "PV",
             "Trigger": "Daylight hours",
-            "f (Hz)": 22,
-            "Duration": "Minutes",
+            "frequency": 22,
+            "duration": "Minutes",
             "Waveform": "",
             "Line Trip": "No",
             "Gen Trip": "No",
@@ -78,18 +78,18 @@
             }
         },
         {
-            "Ref": "Sun2025",
-            "Year": "2019/08",
-            "Grid": "UK",
-            "Propagation": {
+            "reference": "Sun2025",
+            "year": "2019/08",
+            "grid": "UK",
+            "propagation": {
                 "Distance to responsible asset": "120 km approx",
-                "Total distance": "Propagated across England, Wales, and some parts of Scotland."
+                "total_distance": "Propagated across England, Wales, and some parts of Scotland."
             },
             "Geography": "53°53′6″ N 1°47′27.6″ E",
             "Tech": "WF, CC",
             "Trigger": "Lightning",
-            "f (Hz)": 9,
-            "Duration": "30 ms",
+            "frequency": 9,
+            "duration": "30 ms",
             "Waveform": "",
             "Line Trip": "Yes",
             "Gen Trip": "Yes",
