@@ -13,15 +13,41 @@
             margin: 0 auto;
             display: block;
         }
+        /* Estilo para la imagen ampliada */
+        #fullscreen-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
 <h1>Oscillations Map</h1>
 <div id="map"></div>
+
+<!-- Contenedor para la imagen ampliada -->
+<div id="fullscreen-image" onclick="closeFullscreenImage()">
+    <img id="fullscreen-img" src="" alt="Zoomed Image">
+</div>
+
 <script>
     var map = L.map('map').setView([20, 0], 2);
     var activeLayers = {}; // Para rastrear nodos secundarios y líneas
     var activeCircle = null; // Para el círculo de selección
+    var activeLabels = []; // Para almacenar los nombres de los nodos secundarios
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
@@ -32,8 +58,29 @@
         .then(data => {
             data.forEach(entry => {
                 let coords = entry.Coordinates.split(', ').map(Number);
-                let marker = L.marker(coords).addTo(map)
-                    .bindPopup(`<b>${entry.Ref}</b><br>${entry.Grid}<br><a href="${entry.Link_1}" target="_blank">More info</a>`);
+
+                // Obtener todas las imágenes disponibles en el nodo
+                let imageHTML = "";
+                for (let key in entry) {
+                    if (key.startsWith("Image_")) {
+                        // language=HTML
+                        imageHTML += `<img src="${entry[key]}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${entry[key]}')" alt=""><br>`;
+                    }
+                }
+
+                // Construcción del popup con toda la información y todas las imágenes
+                let popupContent;
+                popupContent = `<b>Grid:</b> ${entry.Grid}<br>
+                                    <b>Id: ${entry.id}</b><br>
+                                    <b>Paper: ${entry.Ref}</b><br>
+                                    <b>Year:</b> ${entry.Year}<br>
+                                    <b>Frequency:</b> ${entry["f (Hz)"]} Hz<br>
+                                    <b>Duration:</b> ${entry.Duration}<br>
+                                    <b>Total Distance:</b> ${entry.Propagation["Total distance"]} km<br>
+                                    <a href="${entry.Link_1}" target="_blank">More info</a><br>
+                                    ${imageHTML}`;
+
+                let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
 
                 marker.on('click', function () {
                     clearMap(); // Limpiar antes de mostrar nuevos nodos secundarios
@@ -54,13 +101,13 @@
 
                     // Registrar el nodo principal con su ID en `pointMarkers`
                     pointMarkers[entry.id] = L.marker(coords).addTo(map)
-                        .bindPopup(`<b>${entry.Ref}</b><br>${entry.Grid}`);
+                        .bindPopup(popupContent);
                     activeLayers[entry.Ref].push(pointMarkers[entry.id]);
 
                     if (entry.Points && Object.keys(entry.Points).length > 0) {
                         Object.values(entry.Points).forEach(point => {
                             let pointCoords = point.Coordinates.split(', ').map(Number);
-                            let markerColor = point.Guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🔵 azul si no
+                            let markerColor = point.Guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🟢 verde si no
 
                             let subMarker = L.circleMarker(pointCoords, {
                                 color: markerColor,
@@ -71,6 +118,17 @@
 
                             activeLayers[entry.Ref].push(subMarker);
                             pointMarkers[point.Name] = subMarker; // Guardamos el marcador
+
+                            // Crear etiqueta encima del nodo secundario
+                            let label = L.marker(pointCoords, {
+                                icon: L.divIcon({
+                                    className: 'label',
+                                    html: `<b>${point.Name}</b>`,
+                                    iconSize: [80, 20]
+                                })
+                            }).addTo(map);
+
+                            activeLabels.push(label);
                         });
 
                         // Verificar que Connections existe y es un array de objetos con color
@@ -106,10 +164,25 @@
             layers.forEach(layer => map.removeLayer(layer));
         });
         activeLayers = {};
+
+        activeLabels.forEach(label => map.removeLayer(label));
+        activeLabels = [];
+
         if (activeCircle) {
             map.removeLayer(activeCircle);
             activeCircle = null;
         }
+    }
+
+    // Función para abrir la imagen en pantalla completa
+    function openFullscreenImage(imageUrl) {
+        document.getElementById('fullscreen-img').src = imageUrl;
+        document.getElementById('fullscreen-image').style.display = 'flex';
+    }
+
+    // Función para cerrar la imagen en pantalla completa
+    function closeFullscreenImage() {
+        document.getElementById('fullscreen-image').style.display = 'none';
     }
 
     map.on('click', clearMap);

@@ -23,8 +23,7 @@ fi
 
 # Verificar que el entorno virtual existe
 if [ ! -d "$VENV_PATH" ]; then
-    echo "El entorno virtual no existe en $VENV_PATH. Creándolo..."
-    python3 -m venv "$VENV_PATH"
+    echo "El entorno virtual no existe en $VENV_PATH"
 fi
 
 # Activar el entorno virtual
