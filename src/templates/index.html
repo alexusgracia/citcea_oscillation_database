@@ -13,7 +13,7 @@
             margin: 0 auto;
             display: block;
         }
-        /* Estilo para la imagen ampliada */
+        /* Style for the zoomed image */
         #fullscreen-image {
             display: none;
             position: fixed;
@@ -38,19 +38,19 @@
 <h1>Oscillations Map</h1>
 <div id="map"></div>
 
-<!-- Contenedor para la imagen ampliada -->
+<!-- Div for zoomed image -->
 <div id="fullscreen-image" onclick="closeFullscreenImage()">
     <img id="fullscreen-img" src="" alt="Zoomed Image">
 </div>
 
 <script>
-    let debug = true
+    let debug = true;
     /* global L */
     /** @type {import("leaflet").Map} */
     let map = L.map('map').setView([20, 0], 2);
-    let activeLayers = {}; // Para rastrear nodos secundarios y líneas
-    let activeCircle = null; // Para el círculo de selección
-    let activeLabels = []; // Para almacenar los nombres de los nodos secundarios
+    let activeLayers = {}; // To track secondary nodes and lines
+    let activeCircle = null; // To store the selection circle
+    let activeLabels = []; // To store the labels of secondary nodes
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
@@ -63,7 +63,7 @@
                 if (debug) console.log(entry);
                 let coords = entry.coordinates.split(',').map(Number);
 
-                // Obtener todas las imágenes del array images
+                // Retrieve all images from the "images" array
                 let imageHTML = "";
                 if (Array.isArray(entry.images)) {
                     entry.images.forEach(img => {
@@ -71,7 +71,7 @@
                     });
                 }
 
-                // Construcción del popup con toda la información y todas las imágenes
+                // Construct the popup with all the information and images
                 let popupContent = `<b>Grid:</b> ${entry.grid}<br>
                                     <b>Id:</b> ${entry.id}<br>
                                     <b>Paper:</b> ${entry.reference}<br>
@@ -80,26 +80,26 @@
                                     <b>Duration:</b> ${entry.duration}<br>
                                     <b>Total Distance:</b> ${entry.propagation.total_distance} km<br>`;
 
-                // Agregar los enlaces si existen
+                popupContent += `${imageHTML}`;
+
+                // Add links if they exist
                 if (Array.isArray(entry.links) && entry.links.length > 0) {
                     popupContent += `<b>More info:</b> `;
                     entry.links.forEach((link, index) => {
-                        popupContent += `<a href="${link}" target="_blank">[Link ${index + 1}]</a> `;
+                        popupContent += `<br><a href="${link}" target="_blank">[Link ${index + 1}]</a> `;
                     });
                     popupContent += `<br>`;
                 }
 
-                popupContent += `${imageHTML}`;
-
                 let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
 
                 marker.on('click', function () {
-                    clearMap(); // Limpiar antes de mostrar nuevos nodos secundarios
+                    clearMap(); // Clear before displaying new secondary nodes
 
-                    // Hacer zoom al nodo seleccionado
+                    // Zoom into the selected node
                     map.setView(coords, 7);
 
-                    // Dibujar círculo alrededor del nodo seleccionado
+                    // Draw a circle around the selected node
                     activeCircle = L.circle(coords, {
                         color: 'red',
                         fillColor: '#ff6666',
@@ -108,9 +108,9 @@
                     }).addTo(map);
                     activeLayers[entry.reference] = [activeCircle];
 
-                    let pointMarkers = {}; // Almacenar los marcadores de los nodos secundarios
+                    let pointMarkers = {}; // Store the markers of secondary nodes
 
-                    // Registrar el nodo principal con su ID en `pointMarkers`
+                    // Register the main node with its ID in `pointMarkers`
                     pointMarkers[entry.id] = L.marker(coords).addTo(map)
                         .bindPopup(popupContent);
                     activeLayers[entry.reference].push(pointMarkers[entry.id]);
@@ -118,7 +118,7 @@
                     if (Array.isArray(entry.points) && entry.points.length > 0) {
                         entry.points.forEach(point => {
                             let pointCoords = point.coordinates.split(',').map(Number);
-                            let markerColor = point.guilty ? 'red' : 'green'; // 🔴 Rojo si es guilty, 🟢 verde si no
+                            let markerColor = point.guilty ? 'red' : 'green'; // 🔴 Red if guilty, 🟢 green if not
 
                             let subMarker = L.circleMarker(pointCoords, {
                                 color: markerColor,
@@ -128,9 +128,9 @@
                             }).addTo(map).bindPopup(`<b>${point.name}</b>`);
 
                             activeLayers[entry.reference].push(subMarker);
-                            pointMarkers[point.name] = subMarker; // Guardamos el marcador
+                            pointMarkers[point.name] = subMarker; // Store the marker
 
-                            // Crear etiqueta encima del nodo secundario
+                            // Create a label above the secondary node
                             let label = L.marker(pointCoords, {
                                 icon: L.divIcon({
                                     className: 'label',
@@ -142,26 +142,26 @@
                             activeLabels.push(label);
                         });
 
-                        // Verificar que Connections existe y es un array de objetos con color
+                        // Verify that "connections" exists and is an array of objects with color
                         if (Array.isArray(entry.connections) && entry.connections.length > 0) {
                             entry.connections.forEach(connection => {
                                 let pointA = connection.from;
                                 let pointB = connection.to;
-                                let color = connection.color || 'black'; // Color por defecto
+                                let color = connection.color || 'black'; // Default color
 
-                                if (debug) console.log(`Intentando conectar ${pointA} con ${pointB} en color ${color}`);
+                                if (debug) console.log(`Trying to connect ${pointA} with ${pointB} in color ${color}`);
 
-                                // Verificar si los puntos existen antes de dibujar la línea
+                                // Verify if the points exist before drawing the line
                                 if (pointMarkers[pointA] && pointMarkers[pointB]) {
                                     let latlngA = pointMarkers[pointA].getLatLng();
                                     let latlngB = pointMarkers[pointB].getLatLng();
 
-                                    if (debug) console.log(`Conectando ${pointA} con ${pointB} en color ${color}`);
+                                    if (debug) console.log(`Connecting ${pointA} with ${pointB} in color ${color}`);
 
                                     let connLine = L.polyline([latlngA, latlngB], { color: color, weight: 2 }).addTo(map);
                                     activeLayers[entry.reference].push(connLine);
                                 } else {
-                                    if (debug) console.warn(`No se pudo conectar ${pointA} con ${pointB} porque uno de los puntos no existe.`);
+                                    if (debug) console.warn(`Could not connect ${pointA} with ${pointB} because one of the points does not exist.`);
                                 }
                             });
                         }
@@ -185,19 +185,20 @@
         }
     }
 
-    // Función para abrir la imagen en pantalla completa
+    // Function to open an image in fullscreen
     function openFullscreenImage(imageUrl) {
         document.getElementById('fullscreen-img').src = imageUrl;
         document.getElementById('fullscreen-image').style.display = 'flex';
     }
 
-    // Función para cerrar la imagen en pantalla completa
+    // Function to close the fullscreen image
     function closeFullscreenImage() {
         document.getElementById('fullscreen-image').style.display = 'none';
     }
 
     map.on('click', clearMap);
 </script>
+
 
 </body>
 </html>
