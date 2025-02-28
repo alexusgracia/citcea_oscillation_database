@@ -190,9 +190,9 @@
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
     "images": [
-      "images/Texas - 201710 - Line diagram.png", 
-      "images/Texas-Odessa2021-graphic.jpg"
-    ], // Should update after access of images
+      "images/Texas-201710-Line.png", 
+      "images/Texas-201708-Oscillations.png"
+    ], 
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
     ],
@@ -224,9 +224,13 @@
     "purported": "Improper configuration of control parameters with the DFIG and STATCOM",
     "mitigation_measures": "To appropriately reduce the proportional or integral coefficients of the inner loop current control of the DFIG and STATCOM, or increasing the reactive power output of the STATCOM.",
     "images": [
-      "images/Texas - 201710 - Line diagram.png", 
-      "images/Texas-Odessa2021-graphic.jpg"
-    ], // Should update after access of images
+      "images/Jingxia_area_China_NW_One-line.png", 
+      "images/Jingxia_area_China_NW_Frequency.png",
+      "images/Jingxia_area_China_NW_ksp2.png",
+      "images/Jingxia_area_China_NW_ksi2.png",
+      "images/Jingxia_area_China_NW_ki2.png",
+      "images/Jingxia_area_China_NW_kp2.png"
+    ], 
     "links": [
       "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8787810",
       "http://cssc-hz.com/?en/Products/Cases/117.html"
@@ -259,9 +263,9 @@
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
     "images": [
-      "images/Texas - 201709 - Line diagram.png", 
-      "images/Texas-Odessa2021-graphic.jpg"
-    ], // Should update after access of images
+      "images/Texas-201709-Line.png", 
+      "images/Texas-201709-Oscillations.png"
+    ], 
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
     ],
@@ -293,9 +297,9 @@
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
     "images": [
-      "images/Texas-Odessa2021.jpg", 
-      "images/Texas-Odessa2021-graphic.jpg"
-    ], // Should update after access of images
+      "images/Texas-201708-Line.png", 
+      "images/Texas-201708-Oscillations.png"
+    ], 
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability",
       "www.ercot.com/files/docs/2021/12/02/20_Lower_Rio_Grande_Valley_System_Enhancement_Regional_Planning_Group_Project.pdf"
