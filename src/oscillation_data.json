@@ -170,5 +170,73 @@
     "connections": [
     ]
   }
-
+  {
+    "id": 5,
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2017/10",
+    "trigger": "Line-to-ground-fault",
+    "duration": "3 minutes",
+    "frequency": "20-30",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in Texas",
+    "distance": "112",
+    "radius": 112,
+    "outages": "Line Trip",
+    "identification": "PMU Data",
+    "method": "Not reported",
+    "purported": "DFIG vs. RLC elements",
+    "mitigation_measures": "Bypass Series Capacitors",
+    "images": [
+      "images/Texas-Odessa2021.jpg", 
+      "images/Texas-Odessa2021-graphic.jpg"
+    ], // Should update after access of images
+    "links": [
+      "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
+    ],
+    "coordinates": "27.184, -97.5969",
+    "first_observation": "2017/10",
+    "grid": "USA, Texas",
+    "points": [
+    ],
+    "connections": [
+    ]
+  }
+  {
+    "id": 6,
+    "country": "China",
+    "Region_state": "North West",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2017/10",
+    "trigger": "Not identified",
+    "duration": "1 minute",
+    "frequency": "37.5",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in NW China",
+    "distance": "50",
+    "radius": 50,
+    "outages": "Generator Trip",
+    "identification": "PMU Data",
+    "method": "Eigenvalue analysis",
+    "purported": "Improper configuration of control parameters with the DFIG and STATCOM",
+    "mitigation_measures": "To appropriately reduce the proportional or integral coefficients of the inner loop current control of the DFIG and STATCOM, or increasing the reactive power output of the STATCOM.",
+    "images": [
+      "images/Texas-Odessa2021.jpg", 
+      "images/Texas-Odessa2021-graphic.jpg"
+    ], // Should update after access of images
+    "links": [
+      "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8787810",
+      "http://cssc-hz.com/?en/Products/Cases/117.html"
+    ],
+    "coordinates": "41.56, 94.56",
+    "first_observation": "2017/09",
+    "grid": "China, North West",
+    "points": [
+    ],
+    "connections": [
+    ]
+  }
 ]
