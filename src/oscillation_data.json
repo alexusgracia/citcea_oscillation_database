@@ -11,7 +11,8 @@
     "frequency": "3",
     "involved_devices": "Photovoltaic Plant",
     "propagation": "Cointained in Rajasthan ISTS Complex",
-    "distance": 400,
+    "distance": "400",
+    "radius": 400,
     "outages": "No",
     "identification": "PMU Data",
     "method": "Transient simulation with EMT models",
@@ -41,11 +42,7 @@
       { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
       { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
       { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
-      { "from": "Fatehgarh I", "to": "1", "color": "blue" },
-      { "from": "Fatehgarh II", "to": "1", "color": "blue" },
-      { "from": "Bhadla", "to": "1", "color": "blue" },
-      { "from": "Bhadla-II", "to": "1", "color": "blue" },
-      { "from": "Bikaner", "to": "1", "color": "blue" }
+      { "from": "Fatehgarh I", "to": "1", "color": "blue" }
     ]
   },
   {
@@ -60,7 +57,8 @@
     "frequency": "0.08",
     "involved_devices": "Photovoltaic Plant",
     "propagation": "Cointained in Rajasthan ISTS Complex",
-    "distance": 400,
+    "distance": "400",
+    "radius": 400,
     "outages": "No",
     "identification": "PMU Data",
     "method": "Transient simulation with EMT models",
@@ -73,7 +71,7 @@
     "links": [
       "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html"
     ],
-    "coordinates": "26.1269, 75.0315",
+    "coordinates": "26.952356, 71.409525",
     "first_observation": "2023/01",
     "grid": "India, Rajasthan",
     "points": [
@@ -90,11 +88,7 @@
       { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
       { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
       { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
-      { "from": "Fatehgarh I", "to": "2", "color": "blue" },
-      { "from": "Fatehgarh II", "to": "2", "color": "blue" },
-      { "from": "Bhadla", "to": "2", "color": "blue" },
-      { "from": "Bhadla-II", "to": "2", "color": "blue" },
-      { "from": "Bikaner", "to": "2", "color": "blue" }
+      { "from": "Fatehgarh I", "to": "2", "color": "blue" }
     ]
   },
   {
@@ -109,7 +103,8 @@
     "frequency": "17",
     "involved_devices": "Photovoltaic Plant",
     "propagation": "Contained in around 5 substations",
-    "distance": 333,
+    "distance": "333",
+    "radius": 333,
     "outages": "No",
     "identification": "PMU Data",
     "method": "Transient simulation with EMT models, Nyquist criterion",
@@ -144,7 +139,8 @@
     "frequency": "1",
     "involved_devices": "Photovoltaic plant",
     "propagation": "Contained in Texas",
-    "distance": 322,
+    "distance": "322",
+    "radius": 322,
     "outages": "Generator Trip",
     "identification": "PMU Data",
     "method": "Not reported",
