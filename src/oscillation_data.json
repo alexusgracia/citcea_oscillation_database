@@ -190,7 +190,7 @@
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
     "images": [
-      "images/Texas-Odessa2021.jpg", 
+      "images/Texas - 201710 - Line diagram.png", 
       "images/Texas-Odessa2021-graphic.jpg"
     ], // Should update after access of images
     "links": [
@@ -224,7 +224,7 @@
     "purported": "Improper configuration of control parameters with the DFIG and STATCOM",
     "mitigation_measures": "To appropriately reduce the proportional or integral coefficients of the inner loop current control of the DFIG and STATCOM, or increasing the reactive power output of the STATCOM.",
     "images": [
-      "images/Texas-Odessa2021.jpg", 
+      "images/Texas - 201710 - Line diagram.png", 
       "images/Texas-Odessa2021-graphic.jpg"
     ], // Should update after access of images
     "links": [
@@ -259,7 +259,7 @@
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
     "images": [
-      "images/Texas-Odessa2021.jpg", 
+      "images/Texas - 201709 - Line diagram.png", 
       "images/Texas-Odessa2021-graphic.jpg"
     ], // Should update after access of images
     "links": [
