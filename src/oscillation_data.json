@@ -23,7 +23,8 @@
       "images/Linear_rajasthan.png"
     ],
     "links": [
-      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html"
+      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
+      "https://www.google.com"
     ],
     "coordinates": "26.852356, 71.509525",
     "first_observation": "2023/01",
@@ -122,9 +123,17 @@
     "first_observation": "2020/08",
     "grid": "Australia, West Murray Zone",
     "points": [
+      { "name": "Red Cliffs Substation", "coordinates": "-34.3070, 142.1819", "guilty": false },
+      { "name": "Wemen Solar Farm", "coordinates": "-34.5080, 143.0490", "guilty": false },
+      { "name": "Kiamal Solar Farm", "coordinates": "-35.0000, 142.8500", "guilty": false },
+      { "name": "Broken Hill Solar Plant", "coordinates": "-31.9952, 141.4510", "guilty": false },
+      { "name": "Murray River Solar Farm", "coordinates": "-35.7000, 144.2000", "guilty": false }
     ],
     "connections": [
-
+      { "from": "Red Cliffs Substation", "to": "Wemen Solar Farm", "color": "red" },
+      { "from": "Wemen Solar Farm", "to": "Kiamal Solar Farm", "color": "orange" },
+      { "from": "Kiamal Solar Farm", "to": "Murray River Solar Farm", "color": "orange" },
+      { "from": "Murray River Solar Farm", "to": "Broken Hill Solar Plant", "color": "red" }
     ]
   },
   {
