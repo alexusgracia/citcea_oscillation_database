@@ -1,52 +1,38 @@
 [
   {
     "id": 1,
-    "reference": "Gautam2024",
-    "year": "2023/01",
-    "grid": "India, Rajasthan",
-    "coordinates": "26.1269, 75.0315",
-    "frequency": 3.5,
+    "country": "India",
+    "Region_state": "Rajasthan",
+    "europe": false,
+    "repetitive": true,
+    "last_observation": "2023/07",
+    "trigger": "Not identified",
     "duration": "Hours",
-    "propagation": {
-      "total_distance": 300
-    },
+    "frequency": "3",
+    "involved_devices": "Photovoltaic Plant",
+    "propagation": "Cointained in Rajasthan ISTS Complex",
+    "distance": 400,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "Transient simulation with EMT models",
+    "purported": "Slow polling rates and incorrect tuning of outer-loop PI compensators",
+    "mitigation_measures": "returning",
     "images": [
-      "images/Gautam2024.png",
-      "images/Gautam2024_unifilar.png"
+      "images/Rajasthan.png",
+      "images/Linear_rajasthan.png"
     ],
-    "field_1": "Field_1",
-    "field_2": "Field_2",
-    "field_3": "Field_3",
     "links": [
-      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
-      "http://www.google.com"
+      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html"
     ],
+    "coordinates": "26.852356, 71.509525",
+    "first_observation": "2023/01",
+    "grid": "India, Rajasthan",
     "points": [
-      {
-        "name": "Fatehgarh I",
-        "coordinates": "26.8523556, 71.5095250",
-        "guilty": true
-      },
-      {
-        "name": "Fatehgarh II",
-        "coordinates": "26.703776, 71.272221",
-        "guilty": false
-      },
-      {
-        "name": "Bhadla",
-        "coordinates": "27.419444, 72.072222",
-        "guilty": false
-      },
-      {
-        "name": "Bhadla-II",
-        "coordinates": "27.516083, 72.479278",
-        "guilty": false
-      },
-      {
-        "name": "Bikaner",
-        "coordinates": "28.249167, 73.381944",
-        "guilty": false
-      }
+      { "name": "Fatehgarh I", "coordinates": "26.8523556, 71.5095250", "guilty": true },
+      { "name": "Fatehgarh II", "coordinates": "26.703776, 71.272221", "guilty": false },
+      { "name": "Bhadla", "coordinates": "27.419444, 72.072222", "guilty": false },
+      { "name": "Bhadla-II", "coordinates": "27.516083, 72.479278", "guilty": false },
+      { "name": "Bikaner", "coordinates": "28.249167, 73.381944", "guilty": false }
     ],
     "connections": [
       { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "red" },
@@ -64,74 +50,120 @@
   },
   {
     "id": 2,
-    "reference": "ESO2024",
-    "year": "2021/08",
-    "grid": "GB, Scotland",
-    "coordinates": "57.4253, -4.2641",
-    "frequency": 8,
-    "duration": "25 s",
-    "propagation": {
-      "total_distance": 200
-    },
+    "country": "India",
+    "Region_state": "Rajasthan",
+    "europe": false,
+    "repetitive": true,
+    "last_observation": "2023/01",
+    "trigger": "Not identified",
+    "duration": "3 minutes",
+    "frequency": "0.08",
+    "involved_devices": "Photovoltaic Plant",
+    "propagation": "Cointained in Rajasthan ISTS Complex",
+    "distance": 400,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "Transient simulation with EMT models",
+    "purported": "Too strict parameterization of ride-through configuration",
+    "mitigation_measures": "returning",
     "images": [
-      "images/ESO2024.png",
-      "images/ESO2024_map.png"
+      "images/2nd_India.png",
+      "images/Linear_rajasthan.png"
     ],
-    "field_1": "Field_1",
-    "field_2": "Field_2",
-    "field_3": "Field_3",
     "links": [
-      "https://www.neso.energy/document/319056/download"
+      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html"
     ],
-    "points": [],
-    "connections": []
+    "coordinates": "26.1269, 75.0315",
+    "first_observation": "2023/01",
+    "grid": "India, Rajasthan",
+    "points": [
+      { "name": "Fatehgarh I", "coordinates": "26.8523556, 71.5095250", "guilty": true },
+      { "name": "Fatehgarh II", "coordinates": "26.703776, 71.272221", "guilty": false },
+      { "name": "Bhadla", "coordinates": "27.419444, 72.072222", "guilty": false },
+      { "name": "Bhadla-II", "coordinates": "27.516083, 72.479278", "guilty": false },
+      { "name": "Bikaner", "coordinates": "28.249167, 73.381944", "guilty": false }
+    ],
+    "connections": [
+      { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "red" },
+      { "from": "Fatehgarh II", "to": "Bhadla", "color": "orange" },
+      { "from": "Fatehgarh II", "to": "Bhadla-II", "color": "orange" },
+      { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
+      { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
+      { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
+      { "from": "Fatehgarh I", "to": "2", "color": "blue" },
+      { "from": "Fatehgarh II", "to": "2", "color": "blue" },
+      { "from": "Bhadla", "to": "2", "color": "blue" },
+      { "from": "Bhadla-II", "to": "2", "color": "blue" },
+      { "from": "Bikaner", "to": "2", "color": "blue" }
+    ]
   },
   {
     "id": 3,
-    "reference": "Wang2022",
-    "year": "2020/07",
-    "grid": "Virginia, USA",
-    "coordinates": "37.5258, -77.4428",
-    "frequency": 22,
-    "duration": "Minutes",
-    "propagation": {
-      "total_distance": 150
-    },
+    "country": "Australia",
+    "Region_state": "West Murray Zone",
+    "europe": false,
+    "repetitive": true,
+    "last_observation": "2021/12",
+    "trigger": "Not identified",
+    "duration": "45 minutes",
+    "frequency": "17",
+    "involved_devices": "Photovoltaic Plant",
+    "propagation": "Contained in around 5 substations",
+    "distance": 333,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "Transient simulation with EMT models, Nyquist criterion",
+    "purported": "Deficit of energy in the DC Link",
+    "mitigation_measures": "~",
     "images": [
-      "images/Wang2022.png",
-      "images/Wang2022_map.png"
+      "images/WMZ.jpg",
+      "images/Australia2020jpg.jpg"
     ],
-    "field_1": "Field_1",
-    "field_2": "Field_2",
-    "field_3": "Field_3",
     "links": [
-      "https://ieeexplore.ieee.org/abstract/document/9916830"
+      "https://aemo.com.au/-/media/files/electricity/nem/network_connections/west-murray/high-level-summary-of-wmz-subsynchronous-oscillations.pdf?la=en",
+      "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/10430466"
     ],
-    "points": [],
-    "connections": []
+    "coordinates": "-34.817792, 142.665360",
+    "first_observation": "2020/08",
+    "grid": "Australia, West Murray Zone",
+    "points": [
+    ],
+    "connections": [
+
+    ]
   },
   {
     "id": 4,
-    "reference": "Sun2025",
-    "year": "2019/08",
-    "grid": "UK",
-    "coordinates": "53.885, -1.7904",
-    "frequency": 9,
-    "duration": "30 ms",
-    "propagation": {
-      "total_distance": 120
-    },
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2021/05",
+    "trigger": "Single-line-to-ground fault",
+    "duration": "10 minutes",
+    "frequency": "1",
+    "involved_devices": "Photovoltaic plant",
+    "propagation": "Contained in Texas",
+    "distance": 322,
+    "outages": "Generator Trip",
+    "identification": "PMU Data",
+    "method": "Not reported",
+    "purported": "PLL Instability",
+    "mitigation_measures": "Enforce compliance with NERC requirements",
     "images": [
-      "images/Sun2025.png",
-      "images/Sun2025_map.png"
+      "images/Texas-Odessa2021.jpg",
+      "images/Texas-Odessa2021-graphic.jpg"
     ],
-    "field_1": "Field_1",
-    "field_2": "Field_2",
-    "field_3": "Field_3",
     "links": [
-      "https://ieeexplore.ieee.org/document/10859154"
+      "https://www.nerc.com/pa/rrm/ea/Documents/Odessa_Disturbance_Report.pdf#page=4.45"
     ],
-    "points": [],
-    "connections": []
+    "coordinates": "31.843366, -102.296395",
+    "first_observation": "2021/05",
+    "grid": "USA, Texas",
+    "points": [
+    ],
+    "connections": [
+    ]
   }
+
 ]

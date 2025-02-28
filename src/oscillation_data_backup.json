@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "reference": "Gautam2024",
+    "year": "2023/01",
+    "grid": "India, Rajasthan",
+    "coordinates": "26.1269, 75.0315",
+    "frequency": 3.5,
+    "duration": "Hours",
+    "propagation": {
+      "total_distance": 300
+    },
+    "images": [
+      "images/Gautam2024.png",
+      "images/Gautam2024_unifilar.png"
+    ],
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "links": [
+      "https://www.e-cigre.org/publications/detail/c4-11521-2024-strategies-for-mitigation-of-oscillations-in-ibr-penetrated-network-in-india.html",
+      "http://www.google.com"
+    ],
+    "points": [
+      {
+        "name": "Fatehgarh I",
+        "coordinates": "26.8523556, 71.5095250",
+        "guilty": true
+      },
+      {
+        "name": "Fatehgarh II",
+        "coordinates": "26.703776, 71.272221",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla",
+        "coordinates": "27.419444, 72.072222",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla-II",
+        "coordinates": "27.516083, 72.479278",
+        "guilty": false
+      },
+      {
+        "name": "Bikaner",
+        "coordinates": "28.249167, 73.381944",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "red" },
+      { "from": "Fatehgarh II", "to": "Bhadla", "color": "orange" },
+      { "from": "Fatehgarh II", "to": "Bhadla-II", "color": "orange" },
+      { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
+      { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
+      { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
+      { "from": "Fatehgarh I", "to": "1", "color": "blue" },
+      { "from": "Fatehgarh II", "to": "1", "color": "blue" },
+      { "from": "Bhadla", "to": "1", "color": "blue" },
+      { "from": "Bhadla-II", "to": "1", "color": "blue" },
+      { "from": "Bikaner", "to": "1", "color": "blue" }
+    ]
+  },
+  {
+    "id": 2,
+    "reference": "ESO2024",
+    "year": "2021/08",
+    "grid": "GB, Scotland",
+    "coordinates": "57.4253, -4.2641",
+    "frequency": 8,
+    "duration": "25 s",
+    "propagation": {
+      "total_distance": 200
+    },
+    "images": [
+      "images/ESO2024.png",
+      "images/ESO2024_map.png"
+    ],
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "links": [
+      "https://www.neso.energy/document/319056/download"
+    ],
+    "points": [],
+    "connections": []
+  },
+  {
+    "id": 3,
+    "reference": "Wang2022",
+    "year": "2020/07",
+    "grid": "Virginia, USA",
+    "coordinates": "37.5258, -77.4428",
+    "frequency": 22,
+    "duration": "Minutes",
+    "propagation": {
+      "total_distance": 150
+    },
+    "images": [
+      "images/Wang2022.png",
+      "images/Wang2022_map.png"
+    ],
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "links": [
+      "https://ieeexplore.ieee.org/abstract/document/9916830"
+    ],
+    "points": [],
+    "connections": []
+  },
+  {
+    "id": 4,
+    "reference": "Sun2025",
+    "year": "2019/08",
+    "grid": "UK",
+    "coordinates": "53.885, -1.7904",
+    "frequency": 9,
+    "duration": "30 ms",
+    "propagation": {
+      "total_distance": 120
+    },
+    "images": [
+      "images/Sun2025.png",
+      "images/Sun2025_map.png"
+    ],
+    "field_1": "Field_1",
+    "field_2": "Field_2",
+    "field_3": "Field_3",
+    "links": [
+      "https://ieeexplore.ieee.org/document/10859154"
+    ],
+    "points": [],
+    "connections": []
+  }
+]
