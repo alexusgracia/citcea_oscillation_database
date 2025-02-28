@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscillations Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 80vh;
+            width: 95vw;
+            margin: 0 auto;
+            display: block;
+        }
+        /* Style for the zoomed image */
+        #fullscreen-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #fullscreen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Oscillations Map</h1>
+<div id="map"></div>
+
+<!-- Div for zoomed image -->
+<div id="fullscreen-image" onclick="closeFullscreenImage()">
+    <img id="fullscreen-img" src="" alt="Zoomed Image">
+</div>
+
+<script>
+    let debug = true;
+    /* global L */
+    /** @type {import("leaflet").Map} */
+    let map = L.map('map').setView([20, 0], 2);
+    let activeLayers = {}; // To track secondary nodes and lines
+    let activeCircle = null; // To store the selection circle
+    let activeLabels = []; // To store the labels of secondary nodes
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(entry => {
+                if (debug) console.log(entry);
+                let coords = entry.coordinates.split(',').map(Number);
+
+                // Retrieve all images from the "images" array
+                let imageHTML = "";
+                if (Array.isArray(entry.images)) {
+                    entry.images.forEach(img => {
+                        imageHTML += `<img src="${img}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${img}')" alt=""><br>`;
+                    });
+                }
+
+                // Construct the popup with all the information and images
+                let popupContent = `<b>Grid:</b> ${entry.grid}<br>
+                                    <b>Id:</b> ${entry.id}<br>
+                                    <b>Paper:</b> ${entry.reference}<br>
+                                    <b>Year:</b> ${entry.year}<br>
+                                    <b>Frequency:</b> ${entry.frequency} Hz<br>
+                                    <b>Duration:</b> ${entry.duration}<br>
+                                    <b>Total Distance:</b> ${entry.propagation.total_distance} km<br>`;
+
+                popupContent += `${imageHTML}`;
+
+                // Add links if they exist
+                if (Array.isArray(entry.links) && entry.links.length > 0) {
+                    popupContent += `<b>More info:</b> `;
+                    entry.links.forEach((link, index) => {
+                        popupContent += `<br><a href="${link}" target="_blank">[Link ${index + 1}]</a> `;
+                    });
+                    popupContent += `<br>`;
+                }
+
+                let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
+
+                marker.on('click', function () {
+                    clearMap(); // Clear before displaying new secondary nodes
+
+                    // Zoom into the selected node
+                    map.setView(coords, 7);
+
+                    // Draw a circle around the selected node
+                    activeCircle = L.circle(coords, {
+                        color: 'red',
+                        fillColor: '#ff6666',
+                        fillOpacity: 0.3,
+                        radius: 50000
+                    }).addTo(map);
+                    activeLayers[entry.reference] = [activeCircle];
+
+                    let pointMarkers = {}; // Store the markers of secondary nodes
+
+                    // Register the main node with its ID in `pointMarkers`
+                    pointMarkers[entry.id] = L.marker(coords).addTo(map)
+                        .bindPopup(popupContent);
+                    activeLayers[entry.reference].push(pointMarkers[entry.id]);
+
+                    if (Array.isArray(entry.points) && entry.points.length > 0) {
+                        entry.points.forEach(point => {
+                            let pointCoords = point.coordinates.split(',').map(Number);
+                            let markerColor = point.guilty ? 'red' : 'green'; // 🔴 Red if guilty, 🟢 green if not
+
+                            let subMarker = L.circleMarker(pointCoords, {
+                                color: markerColor,
+                                fillColor: markerColor,
+                                fillOpacity: 0.9,
+                                radius: 6
+                            }).addTo(map).bindPopup(`<b>${point.name}</b>`);
+
+                            activeLayers[entry.reference].push(subMarker);
+                            pointMarkers[point.name] = subMarker; // Store the marker
+
+                            // Create a label above the secondary node
+                            let label = L.marker(pointCoords, {
+                                icon: L.divIcon({
+                                    className: 'label',
+                                    html: `<b>${point.name}</b>`,
+                                    iconSize: [80, 20]
+                                })
+                            }).addTo(map);
+
+                            activeLabels.push(label);
+                        });
+
+                        // Verify that "connections" exists and is an array of objects with color
+                        if (Array.isArray(entry.connections) && entry.connections.length > 0) {
+                            entry.connections.forEach(connection => {
+                                let pointA = connection.from;
+                                let pointB = connection.to;
+                                let color = connection.color || 'black'; // Default color
+
+                                if (debug) console.log(`Trying to connect ${pointA} with ${pointB} in color ${color}`);
+
+                                // Verify if the points exist before drawing the line
+                                if (pointMarkers[pointA] && pointMarkers[pointB]) {
+                                    let latlngA = pointMarkers[pointA].getLatLng();
+                                    let latlngB = pointMarkers[pointB].getLatLng();
+
+                                    if (debug) console.log(`Connecting ${pointA} with ${pointB} in color ${color}`);
+
+                                    let connLine = L.polyline([latlngA, latlngB], { color: color, weight: 2 }).addTo(map);
+                                    activeLayers[entry.reference].push(connLine);
+                                } else {
+                                    if (debug) console.warn(`Could not connect ${pointA} with ${pointB} because one of the points does not exist.`);
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+    function clearMap() {
+        Object.values(activeLayers).forEach(layers => {
+            layers.forEach(layer => map.removeLayer(layer));
+        });
+        activeLayers = {};
+
+        activeLabels.forEach(label => map.removeLayer(label));
+        activeLabels = [];
+
+        if (activeCircle) {
+            map.removeLayer(activeCircle);
+            activeCircle = null;
+        }
+    }
+
+    // Function to open an image in fullscreen
+    function openFullscreenImage(imageUrl) {
+        document.getElementById('fullscreen-img').src = imageUrl;
+        document.getElementById('fullscreen-image').style.display = 'flex';
+    }
+
+    // Function to close the fullscreen image
+    function closeFullscreenImage() {
+        document.getElementById('fullscreen-image').style.display = 'none';
+    }
+
+    map.on('click', clearMap);
+</script>
+
+
+</body>
+</html>
