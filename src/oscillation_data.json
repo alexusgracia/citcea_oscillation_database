@@ -181,7 +181,7 @@
     "duration": "3 minutes",
     "frequency": "20-30",
     "involved_devices": "Wind farm - Type III",
-    "propagation": "Contained in Texas",
+    "propagation": "Contained in Texas Lon hill - Edinburgh Line",
     "distance": "112",
     "radius": 112,
     "outages": "Line Trip",
@@ -234,6 +234,75 @@
     "coordinates": "41.56, 94.56",
     "first_observation": "2017/09",
     "grid": "China, North West",
+    "points": [
+    ],
+    "connections": [
+    ]
+  }
+  {
+    "id": 7,
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2017/09",
+    "trigger": "Line-to-ground-fault",
+    "duration": "0.4 seconds",
+    "frequency": "20-30",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in Texas Lon hill - Edinburgh Line",
+    "distance": "112",
+    "radius": 112,
+    "outages": "Line Trip, Generator Trip",
+    "identification": "PMU Data",
+    "method": "Not reported",
+    "purported": "DFIG vs. RLC elements",
+    "mitigation_measures": "Bypass Series Capacitors",
+    "images": [
+      "images/Texas-Odessa2021.jpg", 
+      "images/Texas-Odessa2021-graphic.jpg"
+    ], // Should update after access of images
+    "links": [
+      "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
+    ],
+    "coordinates": "27.184, -97.5969",
+    "first_observation": "2017/09",
+    "grid": "USA, Texas",
+    "points": [
+    ],
+    "connections": [
+    ]
+  }
+  {
+    "id": 8,
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2017/08",
+    "trigger": "Line-to-ground-fault",
+    "duration": "1 second",
+    "frequency": "20-30",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in Texas Lon hill - Edinburgh Line",
+    "distance": "112",
+    "radius": 112,
+    "outages": "Line Trip, Generator Trip",
+    "identification": "PMU Data",
+    "method": "Not reported",
+    "purported": "DFIG vs. RLC elements",
+    "mitigation_measures": "Bypass Series Capacitors",
+    "images": [
+      "images/Texas-Odessa2021.jpg", 
+      "images/Texas-Odessa2021-graphic.jpg"
+    ], // Should update after access of images
+    "links": [
+      "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability",
+      "www.ercot.com/files/docs/2021/12/02/20_Lower_Rio_Grande_Valley_System_Enhancement_Regional_Planning_Group_Project.pdf"
+    ],
+    "coordinates": "27.184, -97.5969",
+    "first_observation": "2017/08",
+    "grid": "USA, Texas",
     "points": [
     ],
     "connections": [
