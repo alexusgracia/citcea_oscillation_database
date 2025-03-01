@@ -311,5 +311,77 @@
     ],
     "connections": [
     ]
-  }
+  },
+  {
+    "id": 9,
+    "country": "Australia",
+    "Region_state": "West Murray Zone",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2019/01",
+    "trigger": "Disconnection of line, resulting in the isolation of the weak nodes",
+    "duration": "2 seconds",
+    "frequency": "7",
+    "involved_devices": "Photovoltaic plant",
+    "propagation": "Contained in West Murray Zone",
+    "distance": "483",
+    "radius": 483,
+    "outages": "No",
+    "identification": "Protection devices recordings",
+    "method": "Transient simulation with EMT models",
+    "purported": "Weak grid",
+    "mitigation_measures": "Installation of synchronous condensers",
+    "images": [
+      "images/WMZ_7Hz-Line.jpg", 
+      "images/WMZ_7Hz-Oscilations.jpg"
+    ], 
+    "links": [
+      "https://www.e-cigre.org/publications/detail/cse020-cse-020.html",
+      "https://www.esig.energy/wp-content/uploads/2024/08/ESIG-Oscillations-Guide-2024.pdf#page=76.08",
+      "https://www.sciencedirect.com/science/article/pii/S036054422302042X"
+    ],
+    "coordinates": "-34.15185139977965, 142.196180641456",
+    "first_observation": "2016",
+    "grid": "Australia, West Murray Zone",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 10,
+    "country": "China",
+    "Region_state": "North West",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2015/07",
+    "trigger": "Not identified",
+    "duration": "3.3 hours",
+    "frequency": "19-33",
+    "involved_devices": "Wind farm - Type IV",
+    "propagation": "Contained in Xinjiang Uygur Autonomous Region",
+    "distance": "197.2",
+    "radius": 197.2,
+    "outages": "Generator Trip",
+    "identification": "PMU Data",
+    "method": "Transient simulation with EMT models",
+    "purported": "Weak grid followed by torsional resonance",
+    "mitigation_measures": "Adjusting the control parameters of GSC and PLL",
+    "images": [
+      "images/One-line_Xinjiang_China_NW.png", 
+      "images/Frequency_Xinjiang_China_NW.png"
+    ], 
+    "links": [
+      "https://ieeexplore.ieee.org/document/7878693",
+      "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/iet-rpg.2017.0740"
+      
+    ],
+    "coordinates": "40.1739, 97.3214",
+    "first_observation": "2015/07",
+    "grid": "China, North West",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
 ]
