@@ -384,4 +384,217 @@
     "connections": [
     ]
   },
+  {
+    "id": 11,
+    "country": "China",
+    "Region_state": "Hebei (North China)",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2013/02",
+    "trigger": "Not identified",
+    "duration": "500 s (recorded, but the event is longer)",
+    "frequency": "6-8",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in Hebei",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "Generator Trip",
+    "identification": "Protection devices recordings",
+    "method": "Transient simulation with EMT models",
+    "purported": "Not recorded",
+    "mitigation_measures": "Bypassing FSCs when SSR is detected",
+    "images": [
+      "images/GuyuanWindFarm_Hebei_China.png", 
+      "images/GuyuanWindFarm_Hebei_China_waveform.png",
+      "images/GuyuanWindFarm_Hebei_China_SSFreq.png",
+      "images/GuyuanWindFarm_Hebei_China_RMS_currents"
+    ], 
+    "links": [
+      "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/6949171"
+      
+    ],
+    "coordinates": "41.539000, 115.572000",
+    "first_observation": "2012/12",
+    "grid": "China, Hebei (North China)",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 12,
+    "country": "USA",
+    "Region_state": "Northeast Oregon",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2014/04",
+    "trigger": "Not identified",
+    "duration": "Several hours",
+    "frequency": "5 - 14",
+    "involved_devices": "Wind farm - Type IV",
+    "propagation": "Confined to the wind generation site",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "No analysis, just plots",
+    "purported": "There was a concern about the potential of similar interactions should a wind power plant become isolated on a series-compensated line.",
+    "mitigation_measures": "Tune new voltage control parameters",
+    "images": [
+      "images/oregon_map.png",
+      "images/oregon_1.png",
+      "images/oregon_2.png", 
+      "images/oregon_3.png"
+    ], 
+    "links": [
+      "https://www.nerc.com/comm/PC_Reliability_Guidelines_DL/Reliability_Guideline_-_Forced_Oscillations_-_2017-07-31_-_FINAL.pdf"
+    ],
+    "coordinates": "45.6375, -120.605278",
+    "first_observation": "2011/05",
+    "grid": "USA, Northeast Oregon",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 13,
+    "country": "USA",
+    "Region_state": "Oklahoma",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2013/04",
+    "trigger": "Line outage",
+    "duration": "30 minutes",
+    "frequency": "3",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Local, the event affected the operations at a nearby large industrial customer",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "FFT from data",
+    "purported": "Grid disturbances may excite one or a group of these sub-synchronous frequencies to begin to oscillate during high wind periods",
+    "mitigation_measures": "Power curtailment and tune new WPP power control parameters",
+    "images": [
+      "images/og&e_map.png",
+      "images/og&e_2012.png",
+      "images/og&e_2013_v.png", 
+      "images/og&e_2013_p.png"
+    ], 
+    "links": [
+      "https://www.naspi.org/sites/default/files/reference_documents/14.pdf"
+    ],
+    "coordinates": "34.860278, -98.5825",
+    "first_observation": "2011/12",
+    "grid": "USA, Oklahoma",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 14,
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2011/01",
+    "trigger": "Line outage",
+    "duration": "Not recorded",
+    "frequency": "4",
+    "involved_devices": "Wind farm - Type III, Wind farm - Type IV",
+    "propagation": "Contained in Texas CREZ transmission system",
+    "distance": "273",
+    "radius": 273,
+    "outages": "No",
+    "identification": "PMU Data",
+    "method": "Not recorded",
+    "purported": "Weak grid",
+    "mitigation_measures": "Enhance the system strength or voltage controller tuning ",
+    "images": [
+      "images/One_line_diagram_CREZ.png",
+      "images/Voltage_response_CREZ.png",
+      "images/W_Wout_ridethrough_CREZ.png"
+    ], 
+    "links": [
+      "https://ieeexplore.ieee.org/document/6344713"
+    ],
+    "coordinates": "35.25557, -101.1361 ",
+    "first_observation": "2011/01",
+    "grid": "USA, Texas",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 15,
+    "country": "USA",
+    "Region_state": "Texas",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2009/01",
+    "trigger": "Line-to-ground fault leading to radial connection of wind farms with capacitors",
+    "duration": "150 millisecond",
+    "frequency": "20-30",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in Texas",
+    "distance": "400",
+    "radius": 400,
+    "outages": "Generator Trip",
+    "identification": "Protection devices recordings",
+    "method": "Transient simulation with EMT models",
+    "purported": "Induction Generator Effect: interaction between DFIG circuit and RLC circuit.",
+    "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.,
+    "images": [
+      "images/Ajo_line.jpg",
+      "images/Ajo_line.jpg"
+    ], 
+    "links": [
+     "https://ieeexplore.ieee.org/document/6039426",
+      "https://resourcecenter.ieee-pes.org/tags/pes-tr80"
+    ],
+    "coordinates": "28.857885154882524, -98.26852672883568",
+    "first_observation": "2009/01",
+    "grid": "USA, Texas",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 16,
+    "country": "USA",
+    "Region_state": "Minnesota",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2007/10",
+    "trigger": "Radial connection due to switching procedure",
+    "duration": "Not recorded",
+    "frequency": "9.44",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Contained in south central Minnesota",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "No",
+    "identification": "Digital fault recorders",
+    "method": "Transient simulation with EMT models, Modal analysis",
+    "purported": "Induction Generator Effect (rotor vs. RLC)",
+    "mitigation_measures": "Protective Relays",
+    "images": [
+      "images/One_line_Minnesota.png",
+      "images/Oscillation_Minnesota.png"
+    ], 
+    "links": [
+      "https://resourcecenter.ieee-pes.org/publications/technical-reports/pes_tp_tr80_amps_wsso_070920"
+    ],
+    "coordinates": "43.52308, -92.52046055",
+    "first_observation": "2007/10",
+    "grid": "USA, Minnesota",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
 ]
