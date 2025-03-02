@@ -27,8 +27,8 @@
             z-index: 1000;
         }
         #fullscreen-image img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90%;
+            max-height: 90%;
             margin: auto;
         }
         .popup-image-grid {
@@ -102,9 +102,12 @@
 
                 if (Array.isArray(entry.links) && entry.links.length > 0) {
                     popupContent += `<b>More info:</b> `;
-                    entry.links.forEach((link, index) => {
-                        popupContent += `<br><a href="${link}" target="_blank">[Link ${index + 1}]</a> `;
+                    entry.links.forEach((link) => {
+                        let displayText = link.length > 48 ? link.substring(0, 45) + '...' : link;
+                        popupContent += `<br>• <a href="${link}" target="_blank">${displayText}</a> `;
                     });
+
+
                     popupContent += `<br>`;
                 }
 
