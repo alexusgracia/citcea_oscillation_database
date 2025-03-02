@@ -42,7 +42,7 @@ deactivate
 
 echo "Proceso finalizado. Ver logs en $LOG_FILE."
 
-sleep 1
-cat "$LOG_FILE"
+#sleep 1
+#cat "$LOG_FILE"
 
 
