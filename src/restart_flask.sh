@@ -10,7 +10,7 @@ PID=$(pgrep -f "$APP_SCRIPT" | head -n 1)
 
 # Si hay un proceso en ejecución, matarlo
 if [[ -n "$PID" && "$PID" =~ ^[0-9]+$ ]]; then
-    echo "Intentando detener el proceso $PID..."
+    echo "Deteniendo el proceso $PID..."
     kill "$PID"
     sleep 3  # Esperar que el proceso termine
     if ps -p "$PID" > /dev/null; then
@@ -27,11 +27,10 @@ if [ ! -d "$VENV_PATH" ]; then
 fi
 
 # Activar el entorno virtual
-echo "Activando entorno virtual en $VENV_PATH..."
 source "$VENV_PATH/bin/activate"
 
 # Iniciar la aplicación en segundo plano con nohup y redirigir la salida
-echo "Iniciando la aplicación..."
+echo "Running app..."
 nohup bash -c "source $VENV_PATH/bin/activate && python3 $APP_SCRIPT" > "$LOG_FILE" 2>&1 &
 
 # Capturar el PID del nuevo proceso
@@ -40,6 +39,10 @@ echo "Nueva instancia en ejecución con PID: $NEW_PID"
 
 # Salir del entorno virtual
 deactivate
-echo "Entorno virtual desactivado."
 
 echo "Proceso finalizado. Ver logs en $LOG_FILE."
+
+sleep 1
+cat "$LOG_FILE"
+
+
