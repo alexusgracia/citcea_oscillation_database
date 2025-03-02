@@ -31,6 +31,20 @@
             max-height: 90%;
             margin: auto;
         }
+        .popup-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+            gap: 5px; /* Espaciado entre imágenes */
+
+        }
+        .popup-image-grid img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid black; /* Borde negro muy fino */
+            padding: 2px; /* Un pequeño espacio entre la imagen y el borde */
+        }
+
     </style>
 </head>
 <body>
@@ -59,10 +73,12 @@
                 let coords = entry.coordinates.split(',').map(Number);
 
                 let imageHTML = "";
-                if (Array.isArray(entry.images)) {
+                if (Array.isArray(entry.images) && entry.images.length > 0) {
+                    imageHTML = '<div class="popup-image-grid">';
                     entry.images.forEach(img => {
-                        imageHTML += `<img src="${img}" width="100" style="display:block; margin-top:5px; cursor:pointer;" onclick="openFullscreenImage('${img}')" alt=""><br>`;
+                        imageHTML += `<img src="${img}" onclick="openFullscreenImage('${img}')" alt="">`;
                     });
+                    imageHTML += '</div>';
                 }
 
                 let popupContent = `<b>Grid:</b> ${entry.grid}<br>
@@ -93,10 +109,12 @@
                 }
 
                 let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
-                let radius = parseFloat(entry.radius)*1000 || 50000; //50km if there's no value
+                let radius = parseFloat(entry.radius) * 1000 || 50000; // 50km if there's no value
                 marker.on('click', function () {
                     clearMap();
-                    map.setView(coords, 7);
+                    let aux_coords = [coords[0] + 1, coords[1]];
+
+                    map.setView(aux_coords, 7);
                     activeCircle = L.circle(coords, {
                         color: 'red',
                         fillColor: '#f1d0d0',
