@@ -546,14 +546,14 @@
     "identification": "Protection devices recordings",
     "method": "Transient simulation with EMT models",
     "purported": "Induction Generator Effect: interaction between DFIG circuit and RLC circuit.",
-    "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.,
+    "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.",
     "images": [
       "images/Ajo_line.jpg",
       "images/Ajo_line.jpg"
     ], 
     "links": [
      "https://ieeexplore.ieee.org/document/6039426",
-      "https://resourcecenter.ieee-pes.org/tags/pes-tr80"
+     "http://resourcecenter.ieee-pes.org/tags/pes-tr80"
     ],
     "coordinates": "28.857885154882524, -98.26852672883568",
     "first_observation": "2009/01",
@@ -596,5 +596,5 @@
     ],
     "connections": [
     ]
-  },
+  }
 ]
