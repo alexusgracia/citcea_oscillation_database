@@ -133,7 +133,7 @@
                     if (Array.isArray(entry.points) && entry.points.length > 0) {
                         entry.points.forEach(point => {
                             let pointCoords = point.coordinates.split(',').map(Number);
-                            let markerColor = point.guilty ? 'red' : 'green';
+                            let markerColor = point.guilty ? 'red' : 'gray';
 
                             let subMarker = L.circleMarker(pointCoords, {
                                 color: markerColor,
