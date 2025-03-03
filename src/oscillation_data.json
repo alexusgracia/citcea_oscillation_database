@@ -406,7 +406,7 @@
       "images/GuyuanWindFarm_Hebei_China.png", 
       "images/GuyuanWindFarm_Hebei_China_waveform.png",
       "images/GuyuanWindFarm_Hebei_China_SSFreq.png",
-      "images/GuyuanWindFarm_Hebei_China_RMS_currents"
+      "images/GuyuanWindFarm_Hebei_China_RMS_currents.png"
     ], 
     "links": [
       "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/6949171"
@@ -548,7 +548,7 @@
     "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.",
     "images": [
       "images/Ajo_line.jpg",
-      "images/Ajo_line.jpg"
+      "images/Ajo_oscillation.jpg"
     ], 
     "links": [
      "https://ieeexplore.ieee.org/document/6039426",
@@ -595,5 +595,111 @@
     ],
     "connections": [
     ]
-  }
+  },
+  {
+    "id": 17,
+    "country": "China",
+    "Region_state": "South-west (Yunnan and Guangxi)",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2018/01",
+    "trigger": "Switching-on of a second STATCOM",
+    "duration": "Not recorded",
+    "frequency": "2.5, 97.5",
+    "involved_devices": "HVDC station",
+    "propagation": "Contained in Yunnan and Guangxi",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "No",
+    "identification": "Protection devices recordings",
+    "method": "Transient simulation with EMT models, Eigenvalue analysis",
+    "purported": "Interaction of STATCOM with weak grid.  Grid strength and number of STATCOM have an impact.",
+    "mitigation_measures": "Avoid situations leading to a weak interconnection, i.e. avoid outage of one of the two lines",
+    "images": [
+      "images/HVDC_China_Yunnan_Guangxi_line.jpg", 
+      "images/HVDC_China_Yunnan_Guangxi_Oscillation.jpg"
+    ], 
+    "links": [
+      "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/8094985"
+      
+    ],
+    "coordinates": "24.32429667446203, 104.94492424877794",
+    "first_observation": "2018/01",
+    "grid": "China, South-west (Yunnan and Guangxi)",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 18,
+    "country": "Scotland",
+    "Region_state": "North",
+    "europe": true,
+    "repetitive": false,
+    "last_observation": "2023/08",
+    "trigger": "Not identified",
+    "duration": "25 seconds",
+    "frequency": "3-20",
+    "involved_devices": "Wind farm - Type IV",
+    "propagation": "Contained in Scotland",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "Generator Trip",
+    "identification": "PMU Data",
+    "method": "Transient simulation with EMT models",
+    "purported": "Controls and dynamic behavior of a particular asset. Problems with phase-locked loops",
+    "mitigation_measures": "Reduction of output. After solution, returned to service",
+    "images": [
+      "images/Scotland_North_Line.png", 
+      "images/Scotland_North_Ocillations.png"
+    ], 
+    "links": [
+      "https://www.neso.energy/document/319056/download",
+      "https://www.esig.energy/download/managing-grid-stability-in-a-high-ibr-network-julian-leslie/?wpdmdl=8504&refresh=61f14353799ba1643201363"
+      
+    ],
+    "coordinates": "57.425222, -4.263278",
+    "first_observation": "2021/08",
+    "grid": "Scotland, North",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
+  {
+    "id": 19,
+    "country": "USA",
+    "Region_state": "Virginia",
+    "europe": false,
+    "repetitive": false,
+    "last_observation": "2020/12",
+    "trigger": "Daylight hours",
+    "duration": "Minutes",
+    "frequency": "22",
+    "involved_devices": "Photovoltaic plant",
+    "propagation": "Contained in Virginia",
+    "distance": "Not identified",
+    "radius": 100,
+    "outages": "No",
+    "identification": "PMU Data, Synchrophasor",
+    "method": "Data-driven identification of modes",
+    "purported": "Outer loop control, particularly P loop. Interaction with DC side.",
+    "mitigation_measures": "~",
+    "images": [
+      "images/USA_Virginia_Line.png", 
+      "images/USA_Virginia_Oscillations.png"
+    ], 
+    "links": [
+      "https://ieeexplore.ieee.org/abstract/document/9916830"
+      
+    ],
+    "coordinates": "37.525750, -77.448361",
+    "first_observation": "2020/07",
+    "grid": "USA, Virginia",
+    "points": [
+    ],
+    "connections": [
+    ]
+  },
 ]
