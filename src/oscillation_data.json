@@ -701,5 +701,40 @@
     ],
     "connections": [
     ]
+  },
+  {
+    "id": 20,
+    "country": "United Kingdom",
+    "Region_state": "England, Wales, and Scotland",
+    "europe": true,
+    "repetitive": false,
+    "last_observation": "2019/08",
+    "trigger": "Lightning",
+    "duration": "30 milli seconds",
+    "frequency": "9",
+    "involved_devices": "Wind farm - Type IV, Synchronus machine",
+    "propagation": "Propagated across England, Wales and Scotland",
+    "distance": "100 km between Hornsea and Little Barford",
+    "radius": 100,
+    "outages": "Line Trip, Generator Trip",
+    "identification": "Protection devices recordings",
+    "method": "Not detailed in the report",
+    "purported": "Incorrect protection settings at Hornsea and Little Barford. Also controls at Hornsea. ",
+    "mitigation_measures": "Retuning and revision of protection settings",
+    "images": [
+      "images/Hornsea_line.png",
+      "images/Hornsea_Oscillations.png"
+    ],
+    "links": [
+      "https://www.neso.energy/document/152346/download"
+
+    ],
+    "coordinates": "53.638405383827326, -0.30179291534274105",
+    "first_observation": "2019/08",
+    "grid": "United Kingdom, England, Wales, and Scotland",
+    "points": [
+    ],
+    "connections": [
+    ]
   }
 ]
