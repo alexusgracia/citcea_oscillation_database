@@ -66,7 +66,7 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
+            z-index: 1002;
         }
         #fullscreen-image img {
             max-width: 90%;
@@ -121,7 +121,7 @@
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
-            z-index: 1100; /* Asegura que esté por encima de otros elementos */
+            z-index: 1001; /* Asegura que esté por encima de otros elementos */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: background 0.3s ease-in-out;
         }
@@ -220,10 +220,23 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
-    // Mostrar el popup
+    // Mostrar el popup cuando se pulsa el botón
     document.getElementById("info-button").addEventListener("click", function() {
         document.getElementById("info-popup").style.display = "flex";
     });
+
+    // Cerrar el popup al hacer clic fuera del contenido
+    document.getElementById("info-popup").addEventListener("click", function(event) {
+        if (event.target === this) { // Solo cierra si se hace clic fuera del contenido
+            closePopup();
+        }
+    });
+
+    // Cerrar el popup cuando se pulsa el botón de cerrar
+    function closePopup() {
+        document.getElementById("info-popup").style.display = "none";
+    }
+
 
 
     // Cerrar el popup
