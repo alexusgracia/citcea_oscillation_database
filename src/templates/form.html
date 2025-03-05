@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Data Entry Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 2vh;
+            border-radius: 1.5vh;
+            box-shadow: 0 0 2vh rgba(0, 0, 0, 0.1);
+            width: 80vw;
+            max-width: 50vw;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3vh;
+            margin-bottom: 2vh;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            font-size: 1.8vh;
+            margin-top: 1.5vh;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1.5vh;
+            margin-top: 0.5vh;
+            border: 0.3vh solid #ccc;
+            border-radius: 0.8vh;
+            font-size: 1.8vh;
+            background-color: #fff;
+        }
+
+        textarea {
+            height: 10vh;
+            resize: vertical;
+        }
+
+        input::placeholder, textarea::placeholder {
+            font-size: 1.6vh;
+            color: #888;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 1vh;
+            font-size: 1.8vh;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            height: 2vh;
+            margin-right: 1vh;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 1.5vh;
+            border: none;
+            border-radius: 1vh;
+            cursor: pointer;
+            font-size: 2vh;
+            width: 100%;
+            margin-top: 3vh;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Ensures scrolling inside the form */
+        .container::-webkit-scrollbar {
+            width: 0.8vh;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 0.5vh;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Add a New Data Point</h2>
+    <form method="post">
+        <label for="id">ID:</label>
+        <input type="number" name="id" id="id" required>
+
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" placeholder="India">
+
+        <label for="Region_state">Region/State:</label>
+        <input type="text" name="Region_state" id="Region_state" placeholder="Rajasthan">
+
+        <div class="checkbox-group">
+            <input type="checkbox" name="europe" id="europe">
+            <label for="europe">Is in Europe?</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" name="repetitive" id="repetitive">
+            <label for="repetitive">Is repetitive?</label>
+        </div>
+
+        <label for="last_observation">Last Observation:</label>
+        <input type="text" name="last_observation" id="last_observation" placeholder="2023/07">
+
+        <label for="trigger">Trigger:</label>
+        <input type="text" name="trigger" id="trigger" placeholder="Not identified">
+
+        <label for="duration">Duration:</label>
+        <input type="text" name="duration" id="duration" placeholder="Hours">
+
+        <label for="frequency">Frequency:</label>
+        <input type="text" name="frequency" id="frequency" placeholder="3">
+
+        <label for="involved_devices">Involved Devices:</label>
+        <input type="text" name="involved_devices" id="involved_devices" placeholder="Photovoltaic Plant">
+
+        <label for="propagation">Propagation:</label>
+        <input type="text" name="propagation" id="propagation" placeholder="Contained in Rajasthan ISTS Complex">
+
+        <label for="distance">Distance:</label>
+        <input type="text" name="distance" id="distance" placeholder="400">
+
+        <label for="radius">Radius:</label>
+        <input type="text" name="radius" id="radius" placeholder="400">
+
+        <label for="outages">Outages:</label>
+        <input type="text" name="outages" id="outages" placeholder="No">
+
+        <label for="identification">Identification:</label>
+        <input type="text" name="identification" id="identification" placeholder="PMU Data">
+
+        <label for="method">Method:</label>
+        <input type="text" name="method" id="method" placeholder="Transient simulation with EMT models">
+
+        <label for="purported">Purported Cause:</label>
+        <input type="text" name="purported" id="purported" placeholder="Slow polling rates and incorrect tuning">
+
+        <label for="mitigation_measures">Mitigation Measures:</label>
+        <input type="text" name="mitigation_measures" id="mitigation_measures" placeholder="Returning">
+
+        <label for="images">Images (comma-separated):</label>
+        <input type="text" name="images" id="images" placeholder="images/Rajasthan.png,images/Linear_rajasthan.png">
+
+        <label for="links">Links (comma-separated):</label>
+        <input type="text" name="links" id="links" placeholder="https://example.com">
+
+        <label for="coordinates">Coordinates:</label>
+        <input type="text" name="coordinates" id="coordinates" placeholder="26.852356, 71.509525">
+
+        <label for="first_observation">First Observation:</label>
+        <input type="text" name="first_observation" id="first_observation" placeholder="2023/01">
+
+        <label for="grid">Grid:</label>
+        <input type="text" name="grid" id="grid" placeholder="India, Rajasthan">
+
+        <label for="points">Points (Optional JSON):</label>
+        <textarea name="points" id="points" placeholder='[{"name": "Fatehgarh I", "coordinates": "26.8523556, 71.5095250", "guilty": true}]'></textarea>
+
+        <label for="connections">Connections (Optional JSON):</label>
+        <textarea name="connections" id="connections" placeholder='[{"from": "Fatehgarh I", "to": "Fatehgarh II", "color": "gray"}]'></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+</body>
+</html>
