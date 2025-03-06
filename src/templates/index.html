@@ -6,6 +6,7 @@
     <title>Oscillations Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
     <style>
         #map {
             position: absolute;
@@ -182,10 +183,23 @@
     <div class="popup-content">
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <h2>About This Map</h2>
-        <p>This map visualizes oscillation events in electrical grids. Each marker represents an observed event with details such as location, frequency, duration, and affected devices.</p>
-        <p>Click on a marker to see detailed information about the oscillation, including potential causes and mitigation measures.</p>
+        <p>
+            This map visualizes oscillation events in electrical grids. Each marker represents an observed event and displays details such as location, frequency, duration, and affected devices.
+        </p>
+        <p>
+            The marker colors reflect the recency of the event based on the <strong>last observation</strong> date. A smooth color gradient is generated using chroma.js:
+        </p>
+        <ul>
+            <li><strong>Blue hues</strong> (e.g., <span style="color:#1DABE6;">&#9679;</span> and <span style="color:#1C366A;">&#9679;</span>) indicate older events.</li>
+            <li><strong>Red hues</strong> (e.g., <span style="color:#E43034;">&#9679;</span>, <span style="color:#FC4E51;">&#9679;</span>, and <span style="color:#AF060F;">&#9679;</span>) denote more recent events.</li>
+            <li>Intermediate colors represent events with dates between the oldest and the most recent.</li>
+        </ul>
+        <p>
+            Click on a marker to view detailed information about the oscillation, including potential causes, mitigation measures, and other technical details. The map is fully interactive, allowing you to zoom in and out and explore data from different regions.
+        </p>
     </div>
 </div>
+
 <div id="header-bar">Oscillations Map</div>
 <div id="bottom-bar">
     <div id="oscillation-counter">Oscillations: 0</div>
@@ -246,6 +260,18 @@
     fetch('/data')
         .then(response => response.json())
         .then(data => {
+            // Calcular el rango de fechas a partir de "last_observation"
+            let dates = data.map(entry => new Date(entry.last_observation));
+            let minDate = new Date(Math.min(...dates));
+            let maxDate = new Date(Math.max(...dates));
+
+            function getColor(dateStr) {
+                let date = new Date(dateStr);
+                let fraction = (date - minDate) / (maxDate - minDate);
+                let r = fraction * 255;
+                let b = (1 - fraction) * 255;
+                return `rgb(${Math.round(r)}, 0, ${Math.round(b)})`;
+            }
             updateOscillationCounter(data.length); // Mueve esto aquí, después de obtener los datos
 
             data.forEach(entry => {
@@ -292,7 +318,28 @@
                     popupContent += `<br>`;
                 }
 
-                let marker = L.marker(coords).addTo(map).bindPopup(popupContent);
+                // Obtener el color basado en "last_observation"
+                let markerColor = getColor(entry.last_observation);
+
+// Crear un icono personalizado (pin) similar al marcador por defecto
+                let myIcon = L.divIcon({
+                    className: "",
+                    html: `<div style="width:25px; height:41px;">
+                               <svg viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; display:block;">
+                                 <path fill="${markerColor}" d="M12.5,0C5.596,0,0,5.596,0,12.5c0,9.176,12.5,28.5,12.5,28.5S25,21.676,25,12.5C25,5.596,19.404,0,12.5,0z"/>
+                                 <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
+                               </svg>
+                         </div>`,
+                    iconSize: [25, 41],
+                    iconAnchor: [12.5, 41] // La punta inferior del pin se alinea en la posición del marcador
+                });
+
+                // Crear el marcador principal con un circleMarker de color variable
+                // Crear el marcador principal usando el icono personalizado
+                let marker = L.marker(coords, { icon: myIcon })
+                    .addTo(map)
+                    .bindPopup(popupContent);
+
                 let radius = parseFloat(entry.radius) * 1000 || 50000; // 50km if there's no value
                 marker.on('click', function () {
                     clearMap();
@@ -308,8 +355,11 @@
                     activeLayers[entry.id] = [activeCircle];
 
                     let pointMarkers = {};
-                    pointMarkers[entry.id] = L.marker(coords).addTo(map).bindPopup(popupContent);
+                    pointMarkers[entry.id] = L.marker(coords, { icon: myIcon })
+                        .addTo(map)
+                        .bindPopup(popupContent);
                     activeLayers[entry.id].push(pointMarkers[entry.id]);
+
 
                     if (Array.isArray(entry.points) && entry.points.length > 0) {
                         entry.points.forEach(point => {
