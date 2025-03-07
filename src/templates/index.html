@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscillations Map</title>
+    <title>PSO-Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
@@ -200,7 +200,7 @@
     </div>
 </div>
 
-<div id="header-bar">Oscillations Map</div>
+<div id="header-bar">Power System Oscillations Map</div>
 <div id="bottom-bar">
     <div id="oscillation-counter">Oscillations: 0</div>
     <div class="logo-container">
@@ -265,6 +265,15 @@
             let minDate = new Date(Math.min(...dates));
             let maxDate = new Date(Math.max(...dates));
 
+            // Función para parsear la fecha de forma robusta en distintos navegadores
+            function parseDate(dateString) {
+                // Si la cadena no contiene "T", es probable que sea solo "YYYY-MM-DD"
+                // y Safari requiere "YYYY/MM/DD"
+                if (dateString.indexOf('T') === -1) {
+                    return new Date(dateString.replace(/-/g, '/'));
+                }
+                return new Date(dateString);
+            }
             function getColor(dateStr) {
                 let date = new Date(dateStr);
                 let fraction = (date - minDate) / (maxDate - minDate);
