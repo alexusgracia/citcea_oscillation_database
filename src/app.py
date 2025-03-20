@@ -1,7 +1,10 @@
 import os
-from flask import Flask, render_template, jsonify, send_from_directory, request, redirect, url_for
+from flask import Flask, render_template, jsonify, send_from_directory, request, redirect, url_for, send_file
 from dotenv import load_dotenv
 import json
+import pandas as pd
+from io import BytesIO
+from datetime import datetime
 
 # Cargar las variables del archivo .env
 load_dotenv()
@@ -82,6 +85,30 @@ def submit_new_point():
 
     return render_template("form.html")
 
+# Nueva ruta para descargar el contenido en formato Excel
+@app.route("/download_excel")
+def download_excel():
+
+
+    # Convertir los datos a un DataFrame (asegúrate de que 'data' sea una lista de diccionarios)
+    df = pd.DataFrame(data)
+    output = BytesIO()
+
+    # Escribir el DataFrame a un archivo Excel en memoria
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, sheet_name='Oscillations')
+    output.seek(0)
+
+    # Obtener fecha y hora actuales y formatearlas
+    now = datetime.now().strftime("%Y%m%d")
+    filename = f"oscillations_{now}.xlsx"
+    # Enviar el archivo Excel como descarga
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=filename,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
 if __name__ == "__main__":
     port_flask = int(os.getenv("FLASK_RUN_PORT", 8080))  # Toma el puerto del .env o usa 8080 por defecto
     host_flask = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Toma el host del .env o usa 0.0.0.0 por defecto
