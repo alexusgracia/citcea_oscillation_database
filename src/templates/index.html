@@ -37,6 +37,7 @@
             z-index: 1000; /* Asegura que esté por encima del mapa */
         }
 
+
         #bottom-bar {
             position: fixed;
             bottom: 0;
@@ -169,14 +170,54 @@
             color: red;
         }
 
+        /* Botón de Excel (posición fija, a la izquierda del botón Info) */
+        #excel-button {
+            position: fixed;
+            top: 10px;
+            right: 110px; /* Ajusta este valor para colocarlo justo a la izquierda del Info */
+            background: #28a745; /* Verde */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001; /* Se ubica sobre otros elementos */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
+        }
 
+        #excel-button:hover {
+            background: #5cb85c; /* Verde más claro al pasar el ratón */
+        }
+
+        #info-button, #excel-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px; /* Ajusta este valor según necesites */
+        }
     </style>
 
 
 </head>
 <body>
-<!-- Botón flotante en la parte superior derecha -->
-<button id="info-button">ℹ️ Info</button>
+<div id="header-bar">
+    <div id="header-title">Power System Oscillations Map</div>
+    <div id="header-buttons">
+        <!-- Botón Excel -->
+        <button id="excel-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="vertical-align: middle; margin-right: 5px;" viewBox="0 0 16 16">
+                <path d="M5.884 6.68a.5.5 0 0 1 .524-.466h1.175a.5.5 0 0 1 .491.41l.662 3.32a.5.5 0 0 1-.491.59H6.4a.5.5 0 0 1-.491-.41L5.246 7.69a.5.5 0 0 1 .638-.59z"/>
+                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13.5 4.5H10a.5.5 0 0 1-.5-.5V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+            </svg>
+            Download data sheet
+        </button>
+        <!-- Botón Info -->
+        <button id="info-button">ℹ️ Info</button>
+    </div>
+</div>
+
 
 <!-- Popup modal -->
 <div id="info-popup" class="popup-overlay">
@@ -200,7 +241,6 @@
     </div>
 </div>
 
-<div id="header-bar">Power System Oscillations Map</div>
 <div id="bottom-bar">
     <div id="oscillation-counter">Oscillations: 0</div>
     <div class="logo-container">
@@ -219,19 +259,17 @@
     let debug = true;
     let map = L.map('map', {
         center: [20, 0],
-        zoom: 2,
+        zoom: 2.5,
         minZoom: 2, // Evita alejar demasiado el mapa
-        maxBounds: [
-            [-90, -180], // Coordenadas del suroeste (mínimas)
-            [90, 180] // Coordenadas del noreste (máximas)
-        ],
-        maxBoundsViscosity: 1.0 // Hace que el mapa "rebote" en los límites
+
     });
     let activeLayers = {};
     let activeCircle = null;
     let activeLabels = [];
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-85, -180), L.latLng(85, 180)),
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
     // Mostrar el popup cuando se pulsa el botón
@@ -251,7 +289,9 @@
         document.getElementById("info-popup").style.display = "none";
     }
 
-
+    document.getElementById("excel-button").addEventListener("click", function() {
+        window.location.href = '/download_excel';
+    })
 
     // Cerrar el popup
     function closePopup() {
