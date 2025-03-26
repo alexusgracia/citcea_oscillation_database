@@ -475,12 +475,12 @@
     "grid": "Australia, West Murray Zone",
     "points": [
       {
-        "name": "Broken Hill",
+        "name": "Silverton Wind Farm",
         "coordinates": "-31.806460, 141.268603",
         "guilty": true 
       },
       {
-        "name": "Silverton Wind Farm",
+        "name": "Broken Hill solar Plant",
         "coordinates": "-31.985218, 141.394265",
         "guilty": true },
       { 
