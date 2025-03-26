@@ -99,7 +99,7 @@ def download_excel():
         'country', 'Region_state', 'last_observation', 'europe', 'repetitive',
         'trigger', 'duration', 'frequency', 'involved_devices', 'propagation',
         'distance', 'radius', 'outages', 'identification', 'method', 'purported',
-        'mitigation_measures','first_observation', 'grid', 'id', 'possible_mechanism'
+        'mitigation_measures','possible_mechanism','first_observation', 'grid', 'id' 
     ]
     excluded = [
         'coordinates', 'images', 'links',  'points', 'connections'
