@@ -18,6 +18,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Slow polling rates and incorrect tuning of outer-loop PI compensators",
     "mitigation_measures": "returning",
+    "possible_mechanism": "~",
     "images": [
       "images/Rajasthan.png",
       "images/Linear_rajasthan.png"
@@ -29,20 +30,68 @@
     "first_observation": "2023/01",
     "grid": "India, Rajasthan",
     "points": [
-      { "name": "Fatehgarh I", "coordinates": "26.8523556, 71.5095250", "guilty": true },
-      { "name": "Fatehgarh II", "coordinates": "26.703776, 71.272221", "guilty": false },
-      { "name": "Bhadla", "coordinates": "27.419444, 72.072222", "guilty": false },
-      { "name": "Bhadla-II", "coordinates": "27.516083, 72.479278", "guilty": false },
-      { "name": "Bikaner", "coordinates": "28.249167, 73.381944", "guilty": false }
+      {
+        "name": "Fatehgarh I",
+        "coordinates": "26.8523556, 71.5095250",
+        "guilty": true
+      },
+      {
+        "name": "Fatehgarh II",
+        "coordinates": "26.703776, 71.272221",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla",
+        "coordinates": "27.419444, 72.072222",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla-II",
+        "coordinates": "27.516083, 72.479278",
+        "guilty": false
+      },
+      {
+        "name": "Bikaner",
+        "coordinates": "28.249167, 73.381944",
+        "guilty": false
+      }
     ],
     "connections": [
-      { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "gray" },
-      { "from": "Fatehgarh II", "to": "Bhadla", "color": "gray" },
-      { "from": "Fatehgarh II", "to": "Bhadla-II", "color": "gray" },
-      { "from": "Bhadla", "to": "Bhadla-II", "color": "gray" },
-      { "from": "Bhadla", "to": "Bikaner", "color": "gray" },
-      { "from": "Bhadla-II", "to": "Bikaner", "color": "gray" },
-      { "from": "Fatehgarh I", "to": "1", "color": "gray" }
+      {
+        "from": "Fatehgarh I",
+        "to": "Fatehgarh II",
+        "color": "gray"
+      },
+      {
+        "from": "Fatehgarh II",
+        "to": "Bhadla",
+        "color": "gray"
+      },
+      {
+        "from": "Fatehgarh II",
+        "to": "Bhadla-II",
+        "color": "gray"
+      },
+      {
+        "from": "Bhadla",
+        "to": "Bhadla-II",
+        "color": "gray"
+      },
+      {
+        "from": "Bhadla",
+        "to": "Bikaner",
+        "color": "gray"
+      },
+      {
+        "from": "Bhadla-II",
+        "to": "Bikaner",
+        "color": "gray"
+      },
+      {
+        "from": "Fatehgarh I",
+        "to": "1",
+        "color": "gray"
+      }
     ]
   },
   {
@@ -64,6 +113,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Too strict parameterization of ride-through configuration",
     "mitigation_measures": "returning",
+    "possible_mechanism": "~",
     "images": [
       "images/2nd_India.jpg",
       "images/Linear_rajasthan.png"
@@ -75,20 +125,68 @@
     "first_observation": "2023/01",
     "grid": "India, Rajasthan",
     "points": [
-      { "name": "Fatehgarh I", "coordinates": "26.8523556, 71.5095250", "guilty": true },
-      { "name": "Fatehgarh II", "coordinates": "26.703776, 71.272221", "guilty": false },
-      { "name": "Bhadla", "coordinates": "27.419444, 72.072222", "guilty": false },
-      { "name": "Bhadla-II", "coordinates": "27.516083, 72.479278", "guilty": false },
-      { "name": "Bikaner", "coordinates": "28.249167, 73.381944", "guilty": false }
+      {
+        "name": "Fatehgarh I",
+        "coordinates": "26.8523556, 71.5095250",
+        "guilty": true
+      },
+      {
+        "name": "Fatehgarh II",
+        "coordinates": "26.703776, 71.272221",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla",
+        "coordinates": "27.419444, 72.072222",
+        "guilty": false
+      },
+      {
+        "name": "Bhadla-II",
+        "coordinates": "27.516083, 72.479278",
+        "guilty": false
+      },
+      {
+        "name": "Bikaner",
+        "coordinates": "28.249167, 73.381944",
+        "guilty": false
+      }
     ],
     "connections": [
-      { "from": "Fatehgarh I", "to": "Fatehgarh II", "color": "red" },
-      { "from": "Fatehgarh II", "to": "Bhadla", "color": "orange" },
-      { "from": "Fatehgarh II", "to": "Bhadla-II", "color": "orange" },
-      { "from": "Bhadla", "to": "Bhadla-II", "color": "red" },
-      { "from": "Bhadla", "to": "Bikaner", "color": "orange" },
-      { "from": "Bhadla-II", "to": "Bikaner", "color": "orange" },
-      { "from": "Fatehgarh I", "to": "2", "color": "blue" }
+      {
+        "from": "Fatehgarh I",
+        "to": "Fatehgarh II",
+        "color": "red"
+      },
+      {
+        "from": "Fatehgarh II",
+        "to": "Bhadla",
+        "color": "orange"
+      },
+      {
+        "from": "Fatehgarh II",
+        "to": "Bhadla-II",
+        "color": "orange"
+      },
+      {
+        "from": "Bhadla",
+        "to": "Bhadla-II",
+        "color": "red"
+      },
+      {
+        "from": "Bhadla",
+        "to": "Bikaner",
+        "color": "orange"
+      },
+      {
+        "from": "Bhadla-II",
+        "to": "Bikaner",
+        "color": "orange"
+      },
+      {
+        "from": "Fatehgarh I",
+        "to": "2",
+        "color": "blue"
+      }
     ]
   },
   {
@@ -110,6 +208,7 @@
     "method": "Transient simulation with EMT models, Nyquist criterion",
     "purported": "Deficit of energy in the DC Link",
     "mitigation_measures": "~",
+    "possible_mechanism": "~",
     "images": [
       "images/WMZ.jpg",
       "images/Australia2020jpg.jpg"
@@ -122,17 +221,53 @@
     "first_observation": "2020/08",
     "grid": "Australia, West Murray Zone",
     "points": [
-      { "name": "Red Cliffs Substation", "coordinates": "-34.3070, 142.1819", "guilty": false },
-      { "name": "Wemen Solar Farm", "coordinates": "-34.5080, 143.0490", "guilty": false },
-      { "name": "Kiamal Solar Farm", "coordinates": "-35.0000, 142.8500", "guilty": false },
-      { "name": "Broken Hill Solar Plant", "coordinates": "-31.9952, 141.4510", "guilty": false },
-      { "name": "Murray River Solar Farm", "coordinates": "-35.7000, 144.2000", "guilty": false }
+      {
+        "name": "Red Cliffs Substation",
+        "coordinates": "-34.3070, 142.1819",
+        "guilty": false
+      },
+      {
+        "name": "Wemen Solar Farm",
+        "coordinates": "-34.5080, 143.0490",
+        "guilty": false
+      },
+      {
+        "name": "Kiamal Solar Farm",
+        "coordinates": "-35.0000, 142.8500",
+        "guilty": false
+      },
+      {
+        "name": "Broken Hill Solar Plant",
+        "coordinates": "-31.9952, 141.4510",
+        "guilty": false
+      },
+      {
+        "name": "Murray River Solar Farm",
+        "coordinates": "-35.7000, 144.2000",
+        "guilty": false
+      }
     ],
     "connections": [
-      { "from": "Red Cliffs Substation", "to": "Wemen Solar Farm", "color": "red" },
-      { "from": "Wemen Solar Farm", "to": "Kiamal Solar Farm", "color": "orange" },
-      { "from": "Kiamal Solar Farm", "to": "Murray River Solar Farm", "color": "orange" },
-      { "from": "Murray River Solar Farm", "to": "Broken Hill Solar Plant", "color": "red" }
+      {
+        "from": "Red Cliffs Substation",
+        "to": "Wemen Solar Farm",
+        "color": "red"
+      },
+      {
+        "from": "Wemen Solar Farm",
+        "to": "Kiamal Solar Farm",
+        "color": "orange"
+      },
+      {
+        "from": "Kiamal Solar Farm",
+        "to": "Murray River Solar Farm",
+        "color": "orange"
+      },
+      {
+        "from": "Murray River Solar Farm",
+        "to": "Broken Hill Solar Plant",
+        "color": "red"
+      }
     ]
   },
   {
@@ -154,6 +289,7 @@
     "method": "Not reported",
     "purported": "PLL Instability",
     "mitigation_measures": "Enforce compliance with NERC requirements",
+    "possible_mechanism": "~",
     "images": [
       "images/Texas-Odessa2021.jpg",
       "images/Texas-Odessa2021-graphic.jpg"
@@ -164,10 +300,8 @@
     "coordinates": "31.843366, -102.296395",
     "first_observation": "2021/05",
     "grid": "USA, Texas",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 5,
@@ -188,20 +322,19 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
+    "possible_mechanism": "~",
     "images": [
-      "images/Texas-201710-Line.png", 
+      "images/Texas-201710-Line.png",
       "images/Texas-201708-Oscillations.png"
-    ], 
+    ],
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
     ],
     "coordinates": "27.184, -97.5969",
     "first_observation": "2017/10",
     "grid": "USA, Texas",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 6,
@@ -222,14 +355,15 @@
     "method": "Eigenvalue analysis",
     "purported": "Improper configuration of control parameters with the DFIG and STATCOM",
     "mitigation_measures": "To appropriately reduce the proportional or integral coefficients of the inner loop current control of the DFIG and STATCOM, or increasing the reactive power output of the STATCOM.",
+    "possible_mechanism": "~",
     "images": [
-      "images/Jingxia_area_China_NW_One-line.png", 
+      "images/Jingxia_area_China_NW_One-line.png",
       "images/Jingxia_area_China_NW_Frequency.png",
       "images/Jingxia_area_China_NW_ksp2.png",
       "images/Jingxia_area_China_NW_ksi2.png",
       "images/Jingxia_area_China_NW_ki2.png",
       "images/Jingxia_area_China_NW_kp2.png"
-    ], 
+    ],
     "links": [
       "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8787810",
       "https://cssc-hz.com/?en/Products/Cases/117.html"
@@ -237,10 +371,8 @@
     "coordinates": "41.56, 94.56",
     "first_observation": "2017/09",
     "grid": "China, North West",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 7,
@@ -261,20 +393,19 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
+    "possible_mechanism": "~",
     "images": [
-      "images/Texas-201709-Line.png", 
+      "images/Texas-201709-Line.png",
       "images/Texas-201709-Oscillations.png"
-    ], 
+    ],
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
     ],
     "coordinates": "27.184, -97.5959",
     "first_observation": "2017/09",
     "grid": "USA, Texas",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 8,
@@ -295,10 +426,11 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
+    "possible_mechanism": "~",
     "images": [
-      "images/Texas-201708-Line.png", 
+      "images/Texas-201708-Line.png",
       "images/Texas-201708-Oscillations.png"
-    ], 
+    ],
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability",
       "www.ercot.com/files/docs/2021/12/02/20_Lower_Rio_Grande_Valley_System_Enhancement_Regional_Planning_Group_Project.pdf"
@@ -306,10 +438,8 @@
     "coordinates": "27.184, -97.5979",
     "first_observation": "2017/08",
     "grid": "USA, Texas",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 9,
@@ -330,10 +460,11 @@
     "method": "Transient simulation with EMT models",
     "purported": "Weak grid",
     "mitigation_measures": "Installation of synchronous condensers",
+    "possible_mechanism": "~",
     "images": [
-      "images/WMZ_7Hz-Line.jpg", 
+      "images/WMZ_7Hz-Line.jpg",
       "images/WMZ_7Hz-Oscilations.jpg"
-    ], 
+    ],
     "links": [
       "https://www.e-cigre.org/publications/detail/cse020-cse-020.html",
       "https://www.esig.energy/wp-content/uploads/2024/08/ESIG-Oscillations-Guide-2024.pdf#page=76.08",
@@ -342,10 +473,8 @@
     "coordinates": "-34.15185139977965, 142.196180641456",
     "first_observation": "2016",
     "grid": "Australia, West Murray Zone",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 10,
@@ -366,22 +495,20 @@
     "method": "Transient simulation with EMT models",
     "purported": "Weak grid followed by torsional resonance",
     "mitigation_measures": "Adjusting the control parameters of GSC and PLL",
+    "possible_mechanism": "~",
     "images": [
-      "images/One-line_Xinjiang_China_NW.png", 
+      "images/One-line_Xinjiang_China_NW.png",
       "images/Frequency_Xinjiang_China_NW.png"
-    ], 
+    ],
     "links": [
       "https://ieeexplore.ieee.org/document/7878693",
       "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/iet-rpg.2017.0740"
-      
     ],
     "coordinates": "40.1739, 97.3214",
     "first_observation": "2015/07",
     "grid": "China, North West",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 11,
@@ -402,23 +529,21 @@
     "method": "Transient simulation with EMT models",
     "purported": "Not recorded",
     "mitigation_measures": "Bypassing FSCs when SSR is detected",
+    "possible_mechanism": "~",
     "images": [
-      "images/GuyuanWindFarm_Hebei_China.png", 
+      "images/GuyuanWindFarm_Hebei_China.png",
       "images/GuyuanWindFarm_Hebei_China_waveform.png",
       "images/GuyuanWindFarm_Hebei_China_SSFreq.png",
       "images/GuyuanWindFarm_Hebei_China_RMS_currents.png"
-    ], 
+    ],
     "links": [
       "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/6949171"
-      
     ],
     "coordinates": "41.539000, 115.572000",
     "first_observation": "2012/12",
     "grid": "China, Hebei (North China)",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 12,
@@ -439,22 +564,21 @@
     "method": "No analysis, just plots",
     "purported": "There was a concern about the potential of similar interactions should a wind power plant become isolated on a series-compensated line.",
     "mitigation_measures": "Tune new voltage control parameters",
+    "possible_mechanism": "~",
     "images": [
       "images/oregon_map.png",
       "images/oregon_1.png",
-      "images/oregon_2.png", 
+      "images/oregon_2.png",
       "images/oregon_3.png"
-    ], 
+    ],
     "links": [
       "https://www.nerc.com/comm/PC_Reliability_Guidelines_DL/Reliability_Guideline_-_Forced_Oscillations_-_2017-07-31_-_FINAL.pdf"
     ],
     "coordinates": "45.6375, -120.605278",
     "first_observation": "2011/05",
     "grid": "USA, Northeast Oregon",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 13,
@@ -475,22 +599,21 @@
     "method": "FFT from data",
     "purported": "Grid disturbances may excite one or a group of these sub-synchronous frequencies to begin to oscillate during high wind periods",
     "mitigation_measures": "Power curtailment and tune new WPP power control parameters",
+    "possible_mechanism": "~",
     "images": [
       "images/og&e_map.png",
       "images/og&e_2012.png",
-      "images/og&e_2013_v.png", 
+      "images/og&e_2013_v.png",
       "images/og&e_2013_p.png"
-    ], 
+    ],
     "links": [
       "https://www.naspi.org/sites/default/files/reference_documents/14.pdf"
     ],
     "coordinates": "34.860278, -98.5825",
     "first_observation": "2011/12",
     "grid": "USA, Oklahoma",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 14,
@@ -511,21 +634,20 @@
     "method": "Not recorded",
     "purported": "Weak grid",
     "mitigation_measures": "Enhance the system strength or voltage controller tuning ",
+    "possible_mechanism": "~",
     "images": [
       "images/One_line_diagram_CREZ.png",
       "images/Voltage_response_CREZ.png",
       "images/W_Wout_ridethrough_CREZ.png"
-    ], 
+    ],
     "links": [
       "https://ieeexplore.ieee.org/document/6344713"
     ],
     "coordinates": "35.25557, -101.1361 ",
     "first_observation": "2011/01",
     "grid": "USA, Texas",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 15,
@@ -546,26 +668,51 @@
     "method": "Transient simulation with EMT models",
     "purported": "Induction Generator Effect: interaction between DFIG circuit and RLC circuit.",
     "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.",
+    "possible_mechanism": "~",
     "images": [
       "images/Ajo_line.jpg",
       "images/Ajo_oscillation.jpg"
-    ], 
+    ],
     "links": [
-     "https://ieeexplore.ieee.org/document/6039426",
-     "http://resourcecenter.ieee-pes.org/tags/pes-tr80"
+      "https://ieeexplore.ieee.org/document/6039426",
+      "http://resourcecenter.ieee-pes.org/tags/pes-tr80"
     ],
     "coordinates": "27.00315545167205, -97.58459126484729",
     "first_observation": "2009/01",
     "grid": "USA, Texas",
     "points": [
-      { "name": "Lon Hill", "coordinates": "27.842723, -97.614613", "guilty": false },
-      { "name": "Ajo", "coordinates": "27.092287, -97.774934", "guilty": true },
-      { "name": "Rio Hondo", "coordinates": "26.278575, -97.612171", "guilty": false }
+      {
+        "name": "Lon Hill",
+        "coordinates": "27.842723, -97.614613",
+        "guilty": false
+      },
+      {
+        "name": "Ajo",
+        "coordinates": "27.092287, -97.774934",
+        "guilty": true
+      },
+      {
+        "name": "Rio Hondo",
+        "coordinates": "26.278575, -97.612171",
+        "guilty": false
+      }
     ],
     "connections": [
-      { "from": "Ajo", "to": "Lon Hill", "color": "red" },
-      { "from": "Ajo", "to": "Rio Hondo", "color": "orange" },
-      { "from": "Ajo", "to": "15", "color": "blue" }
+      {
+        "from": "Ajo",
+        "to": "Lon Hill",
+        "color": "red"
+      },
+      {
+        "from": "Ajo",
+        "to": "Rio Hondo",
+        "color": "orange"
+      },
+      {
+        "from": "Ajo",
+        "to": "15",
+        "color": "blue"
+      }
     ]
   },
   {
@@ -587,20 +734,19 @@
     "method": "Transient simulation with EMT models, Modal analysis",
     "purported": "Induction Generator Effect (rotor vs. RLC)",
     "mitigation_measures": "Protective Relays",
+    "possible_mechanism": "~",
     "images": [
       "images/One_line_Minnesota.png",
       "images/Oscillation_Minnesota.png"
-    ], 
+    ],
     "links": [
       "https://resourcecenter.ieee-pes.org/publications/technical-reports/pes_tp_tr80_amps_wsso_070920"
     ],
     "coordinates": "43.52308, -92.52046055",
     "first_observation": "2007/10",
     "grid": "USA, Minnesota",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 17,
@@ -621,21 +767,19 @@
     "method": "Transient simulation with EMT models, Eigenvalue analysis",
     "purported": "Interaction of STATCOM with weak grid.  Grid strength and number of STATCOM have an impact.",
     "mitigation_measures": "Avoid situations leading to a weak interconnection, i.e. avoid outage of one of the two lines",
+    "possible_mechanism": "~",
     "images": [
-      "images/HVDC_China_Yunnan_Guangxi_line.jpg", 
+      "images/HVDC_China_Yunnan_Guangxi_line.jpg",
       "images/HVDC_China_Yunnan_Guangxi_Oscillation.jpg"
-    ], 
+    ],
     "links": [
       "https://ieeexplore-ieee-org.recursos.biblioteca.upc.edu/document/8094985"
-      
     ],
     "coordinates": "24.32429667446203, 104.94492424877794",
     "first_observation": "2018/01",
     "grid": "China, South-west (Yunnan and Guangxi)",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 18,
@@ -656,22 +800,20 @@
     "method": "Transient simulation with EMT models",
     "purported": "Controls and dynamic behavior of a particular asset. Problems with phase-locked loops",
     "mitigation_measures": "Reduction of output. After solution, returned to service",
+    "possible_mechanism": "~",
     "images": [
-      "images/Scotland_North_Line.png", 
+      "images/Scotland_North_Line.png",
       "images/Scotland_North_Ocillations.png"
-    ], 
+    ],
     "links": [
       "https://www.neso.energy/document/319056/download",
       "https://www.esig.energy/download/managing-grid-stability-in-a-high-ibr-network-julian-leslie/?wpdmdl=8504&refresh=61f14353799ba1643201363"
-      
     ],
     "coordinates": "57.425222, -4.263278",
     "first_observation": "2021/08",
     "grid": "Scotland, North",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 19,
@@ -692,21 +834,19 @@
     "method": "Data-driven identification of modes",
     "purported": "Outer loop control, particularly P loop. Interaction with DC side.",
     "mitigation_measures": "~",
+    "possible_mechanism": "~",
     "images": [
-      "images/USA_Virginia_Line.png", 
+      "images/USA_Virginia_Line.png",
       "images/USA_Virginia_Oscillations.png"
-    ], 
+    ],
     "links": [
       "https://ieeexplore.ieee.org/abstract/document/9916830"
-      
     ],
     "coordinates": "37.525750, -77.448361",
     "first_observation": "2020/07",
     "grid": "USA, Virginia",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   },
   {
     "id": 20,
@@ -727,20 +867,18 @@
     "method": "Not detailed in the report",
     "purported": "Incorrect protection settings at Hornsea and Little Barford. Also controls at Hornsea. ",
     "mitigation_measures": "Retuning and revision of protection settings",
+    "possible_mechanism": "~",
     "images": [
       "images/Hornsea_line.png",
       "images/Hornsea_Oscillations.png"
     ],
     "links": [
       "https://www.neso.energy/document/152346/download"
-
     ],
     "coordinates": "53.638405383827326, -0.30179291534274105",
     "first_observation": "2019/08",
     "grid": "United Kingdom, England, Wales, and Scotland",
-    "points": [
-    ],
-    "connections": [
-    ]
+    "points": [],
+    "connections": []
   }
 ]
