@@ -470,7 +470,7 @@
       "https://www.esig.energy/wp-content/uploads/2024/08/ESIG-Oscillations-Guide-2024.pdf#page=76.08",
       "https://www.sciencedirect.com/science/article/pii/S036054422302042X"
     ],
-    "coordinates": "-34.15185139977965, 142.196180641456",
+    "coordinates": "-31.973619, 141.461222",
     "first_observation": "2016",
     "grid": "Australia, West Murray Zone",
     "points": [
@@ -479,6 +479,10 @@
         "coordinates": "-31.806460, 141.268603",
         "guilty": true 
       },
+      {
+        "name": "Silverton Wind Farm",
+        "coordinates": "-31.985218, 141.394265",
+        "guilty": true },
       { 
         "name": "Buronga",
         "coordinates": "-34.1034147317411, 142.25964671449267",
@@ -492,17 +496,22 @@
     ],
     "connections": [
       { 
-        "from": "Broken Hill", 
-        "to": "Buronga",  
+        "from": "Silverton Wind Farm", 
+        "to": "Broken Hill solar plant",  
         "color": "red" 
       },
       { 
-        "from": "Buronga", 
-        "to": "Rio Hondo", 
+        "from": "Broken Hill solar plant", 
+        "to": "Buronga", 
         "Kerang": "red" 
       },
       { 
-        "from": "Broken Hill", 
+        "from": "Buronga", 
+        "to": "Kerang", 
+        "color": "red"
+      },
+      { 
+        "from": "Broken Hill solar plant", 
         "to": "9", 
         "color": "blue"
       }
