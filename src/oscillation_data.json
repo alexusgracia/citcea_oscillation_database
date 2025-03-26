@@ -497,11 +497,11 @@
     "connections": [
       { 
         "from": "Silverton Wind Farm", 
-        "to": "Broken Hill solar plant",  
+        "to": "Broken Hill solar Plant",  
         "color": "red" 
       },
       { 
-        "from": "Broken Hill solar plant", 
+        "from": "Broken Hill solar Plant", 
         "to": "Buronga", 
         "Kerang": "red" 
       },
