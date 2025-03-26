@@ -90,7 +90,7 @@
 
         .popup-image-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             /* 2 columnas */
             gap: 5px;
             /* Espaciado entre imágenes */
@@ -179,7 +179,7 @@
         .popup-content {
             background: white;
             padding: 20px;
-            width: 50%;
+            width: 60%;
             max-width: 500px;
             text-align: center;
             border-radius: 10px;
@@ -406,7 +406,7 @@
                     if (Array.isArray(entry.links) && entry.links.length > 0) {
                         popupContent += `<b>More info:</b> `;
                         entry.links.forEach((link) => {
-                            let displayText = link.length > 48 ? link.substring(0, 45) + '...' : link;
+                            let displayText = link.length > 77 ? link.substring(0, 70) + '...' : link;
                             popupContent += `<br>• <a href="${link}" target="_blank">${displayText}</a> `;
                         });
 
@@ -434,7 +434,7 @@
                     // Crear el marcador principal usando el icono personalizado
                     let marker = L.marker(coords, { icon: myIcon })
                         .addTo(map)
-                        .bindPopup(popupContent);
+                        .bindPopup(popupContent, { minWidth: 400, maxWidth: 550 });
 
                     let radius = parseFloat(entry.radius) * 1000 || 50000; // 50km if there's no value
                     marker.on('click', function () {
