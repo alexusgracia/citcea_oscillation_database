@@ -539,8 +539,8 @@
     "frequency": "20-30",
     "involved_devices": "Wind farm - Type III",
     "propagation": "Contained in Texas",
-    "distance": "400",
-    "radius": 400,
+    "distance": "100",
+    "radius": 100,
     "outages": "Generator Trip",
     "identification": "Protection devices recordings",
     "method": "Transient simulation with EMT models",
@@ -554,7 +554,7 @@
      "https://ieeexplore.ieee.org/document/6039426",
      "http://resourcecenter.ieee-pes.org/tags/pes-tr80"
     ],
-    "coordinates": "27.50342, -97.36514",
+    "coordinates": "27.00315545167205, -97.58459126484729",
     "first_observation": "2009/01",
     "grid": "USA, Texas",
     "points": [
