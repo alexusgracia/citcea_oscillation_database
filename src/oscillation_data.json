@@ -558,8 +558,14 @@
     "first_observation": "2009/01",
     "grid": "USA, Texas",
     "points": [
+      { "name": "Lon Hill", "coordinates": "27.842723, -97.614613", "guilty": false },
+      { "name": "Ajo", "coordinates": "27.092287, -97.774934", "guilty": true },
+      { "name": "Rio Hondo", "coordinates": "26.278575, -97.612171", "guilty": false }
     ],
     "connections": [
+      { "from": "Ajo", "to": "Lon Hill", "color": "red" },
+      { "from": "Ajo", "to": "Rio Hondo", "color": "orange" },
+      { "from": "Ajo", "to": "15", "color": "blue" }
     ]
   },
   {
