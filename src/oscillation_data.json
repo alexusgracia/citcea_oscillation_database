@@ -33,31 +33,31 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": true
       },
       {
         "name": "Fatehgarh II",
         "coordinates": "26.703776, 71.272221",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bhadla",
         "coordinates": "27.419444, 72.072222",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bhadla-II",
         "coordinates": "27.516083, 72.479278",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bikaner",
         "coordinates": "28.249167, 73.381944",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       }
     ],
@@ -133,31 +133,31 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": true
       },
       {
         "name": "Fatehgarh II",
         "coordinates": "26.703776, 71.272221",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bhadla",
         "coordinates": "27.419444, 72.072222",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bhadla-II",
         "coordinates": "27.516083, 72.479278",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Bikaner",
         "coordinates": "28.249167, 73.381944",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       }
     ],
@@ -234,31 +234,31 @@
       {
         "name": "Red Cliffs Substation",
         "coordinates": "-34.3070, 142.1819",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Wemen Solar Farm",
         "coordinates": "-34.5080, 143.0490",
-        "icon_type": "Solar Farm",
+        "icon_type": "solar",
         "guilty": false
       },
       {
         "name": "Kiamal Solar Farm",
         "coordinates": "-35.0000, 142.8500",
-        "icon_type": "Solar Farm",
+        "icon_type": "solar",
         "guilty": false
       },
       {
         "name": "Broken Hill Solar Plant",
         "coordinates": "-31.9952, 141.4510",
-        "icon_type": "Solar Farm",
+        "icon_type": "solar",
         "guilty": false
       },
       {
         "name": "Murray River Solar Farm",
         "coordinates": "-35.7000, 144.2000",
-        "icon_type": "Solar Farm",
+        "icon_type": "solar",
         "guilty": false
       }
     ],
@@ -492,25 +492,25 @@
       {
         "name": "Silverton Wind Farm",
         "coordinates": "-31.806460, 141.268603",
-        "icon_type": "Wind Farm",
+        "icon_type": "wind",
         "guilty": true 
       },
       {
         "name": "Broken Hill solar Plant",
         "coordinates": "-31.985218, 141.394265",
-        "icon_type": "Solar Farm",
+        "icon_type": "solar",
         "guilty": true 
       },
       { 
         "name": "Buronga",
         "coordinates": "-34.1034147317411, 142.25964671449267",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": true 
       },
       { 
         "name": "Kerang", 
         "coordinates": "-35.7714288180139, 143.9348538918743",
-        "icon_type": "Substation", 
+        "icon_type": "substation", 
         "guilty": true 
       }
     ],
@@ -745,19 +745,19 @@
       {
         "name": "Lon Hill",
         "coordinates": "27.842723, -97.614613",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       },
       {
         "name": "Ajo",
         "coordinates": "27.092287, -97.774934",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": true
       },
       {
         "name": "Rio Hondo",
         "coordinates": "26.278575, -97.612171",
-        "icon_type": "Substation",
+        "icon_type": "substation",
         "guilty": false
       }
     ],

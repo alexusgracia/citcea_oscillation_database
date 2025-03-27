@@ -455,19 +455,58 @@
                             .addTo(map)
                             .bindPopup(popupContent);
                         activeLayers[entry.id].push(pointMarkers[entry.id]);
+                        const iconWind = L.icon({
+                            iconUrl: '../static/icons/wind-farm.png',  // Reemplaza con la ruta de tu imagen
+                            iconSize: [25, 41],
+                            iconAnchor: [12.5, 41],
+                            popupAnchor: [0, -41]
+                        });
 
+                        const iconNuclear = L.icon({
+                            iconUrl: '../static/icons/nuclear-plant.png',  // Reemplaza con la ruta de tu imagen
+                            iconSize: [25, 41],
+                            iconAnchor: [12.5, 41],
+                            popupAnchor: [0, -41]
+                        });
+
+                        const iconSolar = L.icon({
+                            iconUrl: '../static/icons/solar_energy.png',
+                            iconSize: [25, 41],
+                            iconAnchor: [12.5, 41],
+                            popupAnchor: [0, -41]
+                        });
+
+                        const iconStation = L.icon({
+                            iconUrl: '../static/icons/electric-factory.png',
+                            iconSize: [25, 41],
+                            iconAnchor: [12.5, 41],
+                            popupAnchor: [0, -41]
+                        });
 
                         if (Array.isArray(entry.points) && entry.points.length > 0) {
                             entry.points.forEach(point => {
                                 let pointCoords = point.coordinates.split(',').map(Number);
-                                let markerColor = point.guilty ? 'red' : 'gray';
 
-                                let subMarker = L.circleMarker(pointCoords, {
-                                    color: markerColor,
-                                    fillColor: markerColor,
-                                    fillOpacity: 0.9,
-                                    radius: 6
-                                }).addTo(map).bindPopup(`<b>${point.name}</b>`);
+                                let selectedIcon;
+                                console.log(point);
+                                switch (point.icon_type) {
+                                    case 'substation':
+                                        selectedIcon = iconStation;
+                                        break;
+                                    case 'solar':
+                                        selectedIcon = iconSolar;
+                                        break;
+                                    case 'wind':
+                                        selectedIcon = iconWind;
+                                        break;
+                                    case 'nuclear':
+                                        selectedIcon = iconNuclear;
+                                        break;
+                                    default:
+                                        selectedIcon = iconStation; // Valor por defecto si no coincide
+                                }
+
+                                let subMarker = L.marker(pointCoords, {icon: selectedIcon}).addTo(map).bindPopup(`<b>${point.name}</b>`);
 
                                 activeLayers[entry.id].push(subMarker);
                                 pointMarkers[point.name] = subMarker;
@@ -475,7 +514,7 @@
                                 let label = L.marker(pointCoords, {
                                     icon: L.divIcon({
                                         className: 'label',
-                                        html: `<b>${point.name}</b>`,
+                                        html: `<b style="color: ${point.guilty ? 'red' : 'black'};">${point.name}</b>`,
                                         iconSize: [80, 20]
                                     })
                                 }).addTo(map);
