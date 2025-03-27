@@ -493,19 +493,19 @@
         "name": "Silverton Wind Farm",
         "coordinates": "-31.806460, 141.268603",
         "icon_type": "wind",
-        "guilty": true 
+        "guilty": true
       },
       {
         "name": "Broken Hill solar Plant",
         "coordinates": "-31.985218, 141.394265",
         "icon_type": "solar",
-        "guilty": true 
+        "guilty": true
       },
       { 
         "name": "Buronga",
         "coordinates": "-34.1034147317411, 142.25964671449267",
         "icon_type": "substation",
-        "guilty": true 
+        "guilty": true
       },
       { 
         "name": "Kerang", 
@@ -945,4 +945,5 @@
     "points": [],
     "connections": []
   }
+
 ]
