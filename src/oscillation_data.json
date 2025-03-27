@@ -33,7 +33,7 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
-        "icon_type": "substation",
+        "icon_type": "solar",
         "guilty": true
       },
       {
@@ -133,7 +133,7 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
-        "icon_type": "substation",
+        "icon_type": "solar",
         "guilty": true
       },
       {
@@ -749,6 +749,12 @@
         "guilty": false
       },
       {
+        "name": "Gulf wind",
+        "coordinates": "27.00315545167205, -97.58459126484729",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
         "name": "Ajo",
         "coordinates": "27.092287, -97.774934",
         "icon_type": "substation",
@@ -774,8 +780,8 @@
       },
       {
         "from": "Ajo",
-        "to": "15",
-        "color": "blue"
+        "to": "Gulf wind",
+        "color": "red"
       }
     ]
   },
