@@ -245,6 +245,7 @@
             z-index: 1200;
             overflow-y: auto;
             padding: 20px;
+            display: none;
         }
 
         .side-panel.open {
@@ -332,15 +333,20 @@
     <script>
         function openSidePanel(content) {
             document.getElementById("side-panel-content").innerHTML = content;
-            document.getElementById("side-panel").classList.add("open");
+            const sidePanel = document.getElementById("side-panel");
+            sidePanel.style.display = "block";  // o "flex" según tu diseño
+            sidePanel.classList.add("open");
+
         }
 
         function closeSidePanel() {
-            document.getElementById("side-panel").classList.remove("open");
+            const panel = document.getElementById("side-panel");
+            panel.classList.remove("open");
+            panel.style.display = "none";
         }
 
 
-        let debug = true;
+        let debug = false;
         let map = L.map('map', {
             center: [20, 0],
             zoom: 2.5,
@@ -449,35 +455,7 @@
                         sidePanelContent += `<br>`;
                     }
 
-                    let popupContent = `<b>Grid:</b> ${entry.grid}<br>
-                                    <b>ID:</b> ${entry.id}<br>
-                                    <b>Country:</b> ${entry.country}<br>
-                                    <b>Region/State:</b> ${entry.Region_state}<br>
-                                    <b>First Observation:</b> ${entry.first_observation}<br>
-                                    <b>Last Observation:</b> ${entry.last_observation}<br>
-                                    <b>Duration:</b> ${entry.duration}<br>
-                                    <b>Frequency:</b> ${entry.frequency} Hz<br>
-                                    <b>Involved Devices:</b> ${entry.involved_devices}<br>
-                                    <b>Propagation:</b> ${entry.propagation}<br>
-                                    <b>Distance:</b> ${entry.distance} km<br>
-                                    <b>Outages:</b> ${entry.outages}<br>
-                                    <b>Identification:</b> ${entry.identification}<br>
-                                    <b>Analysis:</b> ${entry.method}<br>
-                                    <b>Purported Issue:</b> ${entry.purported}<br>
-                                    <b>Mitigation Measures:</b> ${entry.mitigation_measures}<br>
-                                    <b>Possible Mechanism:</b> ${entry.possible_mechanism}<br>`;
-                    popupContent += `${imageHTML}`;
 
-                    if (Array.isArray(entry.links) && entry.links.length > 0) {
-                        popupContent += `<b>More info:</b> `;
-                        entry.links.forEach((link) => {
-                            let displayText = link.length > 77 ? link.substring(0, 70) + '...' : link;
-                            popupContent += `<br>• <a href="${link}" target="_blank">${displayText}</a> `;
-                        });
-
-
-                        popupContent += `<br>`;
-                    }
 
                     // Obtener el color basado en "last_observation"
                     let markerColor = getColor(entry.last_observation);
@@ -497,9 +475,7 @@
 
                     // Crear el marcador principal con un circleMarker de color variable
                     // Crear el marcador principal usando el icono personalizado
-                    /*let marker = L.marker(coords, { icon: myIcon })
-                        .addTo(map)
-                        .bindPopup(popupContent, { minWidth: 400, maxWidth: 550 });*/
+
                     let marker = L.marker(coords, { icon: myIcon })
                         .addTo(map);
                     let radius = parseFloat(entry.radius) * 1000 || 50000; // 50km if there's no value
@@ -518,61 +494,60 @@
 
                         let pointMarkers = {};
                         pointMarkers[entry.id] = L.marker(coords, { icon: myIcon })
-                            .addTo(map)
-                            .bindPopup(popupContent);
+                            .addTo(map);
                         activeLayers[entry.id].push(pointMarkers[entry.id]);
-                        const iconWind = L.icon({
-                            iconUrl: '../static/icons/wind-farm.png',  // Reemplaza con la ruta de tu imagen
-                            iconSize: [25, 41],
-                            iconAnchor: [12.5, 41],
-                            popupAnchor: [0, -41]
-                        });
 
-                        const iconNuclear = L.icon({
-                            iconUrl: '../static/icons/nuclear-plant.png',  // Reemplaza con la ruta de tu imagen
-                            iconSize: [25, 41],
-                            iconAnchor: [12.5, 41],
-                            popupAnchor: [0, -41]
-                        });
 
-                        const iconSolar = L.icon({
-                            iconUrl: '../static/icons/solar_energy.png',
-                            iconSize: [25, 41],
-                            iconAnchor: [12.5, 41],
-                            popupAnchor: [0, -41]
-                        });
 
-                        const iconStation = L.icon({
-                            iconUrl: '../static/icons/electric-factory.png',
-                            iconSize: [25, 41],
-                            iconAnchor: [12.5, 41],
-                            popupAnchor: [0, -41]
-                        });
 
                         if (Array.isArray(entry.points) && entry.points.length > 0) {
                             entry.points.forEach(point => {
                                 let pointCoords = point.coordinates.split(',').map(Number);
+                                let subMarker;
+                                if (point.icon_type === 'substation') {
+                                    // Para subestación, creamos un circleMarker (punto circular)
+                                    subMarker = L.circleMarker(pointCoords, {
+                                        color: point.guilty ? 'red' : 'gray',
+                                        fillColor: point.guilty ? 'red' : 'gray',
+                                        fillOpacity: 0.9,
+                                        radius: 6
+                                    }).addTo(map).bindPopup(`<b>${point.name}</b>`);
+                                } else {
 
-                                let selectedIcon;
-                                console.log(point);
-                                switch (point.icon_type) {
-                                    case 'substation':
-                                        selectedIcon = iconStation;
-                                        break;
-                                    case 'solar':
-                                        selectedIcon = iconSolar;
-                                        break;
-                                    case 'wind':
-                                        selectedIcon = iconWind;
-                                        break;
-                                    case 'nuclear':
-                                        selectedIcon = iconNuclear;
-                                        break;
-                                    default:
-                                        selectedIcon = iconStation; // Valor por defecto si no coincide
+                                    let selectedIcon;
+                                    switch (point.icon_type) {
+
+                                        case 'solar':
+                                            selectedIcon = L.icon({
+                                                iconUrl: '../static/icons/solar_energy.png',
+                                                iconSize: [25, 41],
+                                                iconAnchor: [12.5, 41],
+                                                popupAnchor: [0, -41]
+                                            });
+                                            break;
+                                        case 'wind':
+                                            selectedIcon = L.icon({
+                                                iconUrl: '../static/icons/wind-farm.png',  // Reemplaza con la ruta de tu imagen
+                                                iconSize: [25, 41],
+                                                iconAnchor: [12.5, 41],
+                                                popupAnchor: [0, -41]
+                                            });
+                                            break;
+                                        case 'nuclear':
+                                            selectedIcon = L.icon({
+                                                iconUrl: '../static/icons/nuclear-plant.png',  // Reemplaza con la ruta de tu imagen
+                                                iconSize: [25, 41],
+                                                iconAnchor: [12.5, 41],
+                                                popupAnchor: [0, -41]
+                                            });
+                                            break;
+                                        default:
+                                            selectedIcon = iconStation; // Valor por defecto si no coincide
+                                    }
+                                    subMarker = L.marker(pointCoords, {icon: selectedIcon}).addTo(map).bindPopup(`<b>${point.name}</b>`);
+
                                 }
 
-                                let subMarker = L.marker(pointCoords, {icon: selectedIcon}).addTo(map).bindPopup(`<b>${point.name}</b>`);
 
                                 activeLayers[entry.id].push(subMarker);
                                 pointMarkers[point.name] = subMarker;
