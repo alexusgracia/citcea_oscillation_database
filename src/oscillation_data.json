@@ -501,7 +501,7 @@
     "links": [
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability"
     ],
-    "coordinates": "27.184, -97.5959",
+    "coordinates": "27.843, -97.615",
     "first_observation": "2017/09",
     "grid": "USA, Texas",
     "points": [],
@@ -535,13 +535,13 @@
       "https://www.researchgate.net/publication/378306573_Introduction_to_Power_System_Oscillatory_Stability",
       "www.ercot.com/files/docs/2021/12/02/20_Lower_Rio_Grande_Valley_System_Enhancement_Regional_Planning_Group_Project.pdf"
     ],
-    "coordinates": "27.184, -97.5979",
+    "coordinates": "27.841, -97.613",
     "first_observation": "2017/08",
     "grid": "USA, Texas",
     "points": [
       {
         "name": "Lon Hill",
-        "coordinates": "27.843, -97.615",
+        "coordinates": "27.842723, -97.614613",
         "icon_type": "substation",
         "guilty": false
       },
