@@ -140,6 +140,7 @@
 
         /* Botón flotante en la parte superior derecha */
         #info-button {
+
             position: fixed;
             top: 10px;
             right: 15px;
@@ -180,8 +181,8 @@
             background: white;
             padding: 20px;
             width: 60%;
-            max-width: 500px;
-            text-align: center;
+            max-width: 700px;
+            text-align: justify;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -236,11 +237,12 @@
         .side-panel {
             position: fixed;
             top: 60px;
-            right: -300px; /* Oculto inicialmente a la derecha */
-            width: 350px;  /* Ancho del panel */
+            right: -300px; /* Oculto inicialmente */
+            width: 350px;
             height: 80%;
             background: #fff;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: right 0.3s ease;
             z-index: 1200;
             overflow-y: auto;
@@ -249,8 +251,36 @@
         }
 
         .side-panel.open {
-            right: 0; /* Se despliega a la vista */
+            right: 5px; /* Se despliega en la vista */
+            display: block;
         }
+
+        .side-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .side-panel-header h2 {
+            margin: 0;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .side-panel-body {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .side-panel-body p {
+            margin: 0 0 10px;
+        }
+
+
+
 
 
         .close-btn {
@@ -260,7 +290,9 @@
             font-size: 24px;
             cursor: pointer;
         }
-
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 
 
@@ -611,8 +643,14 @@
         map.on('click', clearMap);
     </script>
     <div id="side-panel" class="side-panel">
-        <span class="close-btn" onclick="closeSidePanel()">×</span>
-        <div id="side-panel-content"></div>
+        <div class="side-panel-header">
+            <h2>Oscillation Details</h2>
+            <span class="close-btn" onclick="closeSidePanel()">×</span>
+        </div>
+        <div class="side-panel-body" id="side-panel-content">
+            <!-- Aquí se inserta el contenido dinámico -->
+        </div>
+
     </div>
 </body>
 
