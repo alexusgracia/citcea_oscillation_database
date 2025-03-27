@@ -504,8 +504,93 @@
     "coordinates": "27.843, -97.615",
     "first_observation": "2017/09",
     "grid": "USA, Texas",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Lon Hill",
+        "coordinates": "27.842723, -97.614613",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Papalote Creek Wind Farm 1",
+        "coordinates": "28.01045476397033, -97.5283189236954",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Papalote Creek Wind Farm 2",
+        "coordinates": "27.995710721065205, -97.32458944945324",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Midway Wind",
+        "coordinates": "27.955719237103462, -97.30068590451467",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Cranell Wind Farm",
+        "coordinates": "28.210325249751698, -97.3755242213321",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Karankawa Wind",
+        "coordinates": "28.126340, -97.780692",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
+        "name": "El Algodon Alto Wind Farm",
+        "coordinates": "28.001709, -97.717724",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
+        "name": "Edinburg",
+        "coordinates": "26.341427, -98.173938",
+        "icon_type": "substation",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      {
+        "from": "Papalote Creek Wind Farm 2",
+        "to": "Papalote Creek Wind Farm 1",
+        "color": "orange"
+      },
+      {
+        "from": "Papalote Creek Wind Farm 1",
+        "to": "Lon Hill",
+        "color": "orange"
+      },
+      {
+        "from": "Midway Wind",
+        "to": "Papalote Creek Wind Farm 1",
+        "color": "orange"
+      },
+      {
+        "from": "Cranell Wind Farm",
+        "to": "Lon Hill",
+        "color": "orange"
+      },
+      {
+        "from": "Karankawa Wind",
+        "to": "El Algodon Alto Wind Farm",
+        "color": "red"
+      },
+      {
+        "from": "El Algodon Alto Wind Farm",
+        "to": "Lon Hill",
+        "color": "red"
+      },
+      {
+        "from": "Lon Hill",
+        "to": "Edinburg",
+        "color": "blue"
+      }
+    ]
   },
   {
     "id": 8,
