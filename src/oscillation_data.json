@@ -18,7 +18,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Slow polling rates and incorrect tuning of outer-loop PI compensators",
     "mitigation_measures": "returning",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Outer Loop - V Control",
     "images": [
       "images/Rajasthan.png",
       "images/Linear_rajasthan.png"
@@ -33,26 +33,31 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
+        "icon_type": "Substation",
         "guilty": true
       },
       {
         "name": "Fatehgarh II",
         "coordinates": "26.703776, 71.272221",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bhadla",
         "coordinates": "27.419444, 72.072222",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bhadla-II",
         "coordinates": "27.516083, 72.479278",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bikaner",
         "coordinates": "28.249167, 73.381944",
+        "icon_type": "Substation",
         "guilty": false
       }
     ],
@@ -113,7 +118,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Too strict parameterization of ride-through configuration",
     "mitigation_measures": "returning",
-    "possible_mechanism": "~",
+    "possible_mechanism": "LVRT Cycle",
     "images": [
       "images/2nd_India.jpg",
       "images/Linear_rajasthan.png"
@@ -128,26 +133,31 @@
       {
         "name": "Fatehgarh I",
         "coordinates": "26.8523556, 71.5095250",
+        "icon_type": "Substation",
         "guilty": true
       },
       {
         "name": "Fatehgarh II",
         "coordinates": "26.703776, 71.272221",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bhadla",
         "coordinates": "27.419444, 72.072222",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bhadla-II",
         "coordinates": "27.516083, 72.479278",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Bikaner",
         "coordinates": "28.249167, 73.381944",
+        "icon_type": "Substation",
         "guilty": false
       }
     ],
@@ -208,7 +218,7 @@
     "method": "Transient simulation with EMT models, Nyquist criterion",
     "purported": "Deficit of energy in the DC Link",
     "mitigation_measures": "~",
-    "possible_mechanism": "~",
+    "possible_mechanism": "DC and AC sides energy unbalance",
     "images": [
       "images/WMZ.jpg",
       "images/Australia2020jpg.jpg"
@@ -224,26 +234,31 @@
       {
         "name": "Red Cliffs Substation",
         "coordinates": "-34.3070, 142.1819",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Wemen Solar Farm",
         "coordinates": "-34.5080, 143.0490",
+        "icon_type": "Solar Farm",
         "guilty": false
       },
       {
         "name": "Kiamal Solar Farm",
         "coordinates": "-35.0000, 142.8500",
+        "icon_type": "Solar Farm",
         "guilty": false
       },
       {
         "name": "Broken Hill Solar Plant",
         "coordinates": "-31.9952, 141.4510",
+        "icon_type": "Solar Farm",
         "guilty": false
       },
       {
         "name": "Murray River Solar Farm",
         "coordinates": "-35.7000, 144.2000",
+        "icon_type": "Solar Farm",
         "guilty": false
       }
     ],
@@ -289,7 +304,7 @@
     "method": "Not reported",
     "purported": "PLL Instability",
     "mitigation_measures": "Enforce compliance with NERC requirements",
-    "possible_mechanism": "~",
+    "possible_mechanism": "PLL Instability",
     "images": [
       "images/Texas-Odessa2021.jpg",
       "images/Texas-Odessa2021-graphic.jpg"
@@ -322,7 +337,7 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/Texas-201710-Line.png",
       "images/Texas-201708-Oscillations.png"
@@ -355,7 +370,7 @@
     "method": "Eigenvalue analysis",
     "purported": "Improper configuration of control parameters with the DFIG and STATCOM",
     "mitigation_measures": "To appropriately reduce the proportional or integral coefficients of the inner loop current control of the DFIG and STATCOM, or increasing the reactive power output of the STATCOM.",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Unknown",
     "images": [
       "images/Jingxia_area_China_NW_One-line.png",
       "images/Jingxia_area_China_NW_Frequency.png",
@@ -393,7 +408,7 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/Texas-201709-Line.png",
       "images/Texas-201709-Oscillations.png"
@@ -426,7 +441,7 @@
     "method": "Not reported",
     "purported": "DFIG vs. RLC elements",
     "mitigation_measures": "Bypass Series Capacitors",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/Texas-201708-Line.png",
       "images/Texas-201708-Oscillations.png"
@@ -460,7 +475,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Weak grid",
     "mitigation_measures": "Installation of synchronous condensers",
-    "possible_mechanism": "~",
+    "possible_mechanism": "PLL Instability",
     "images": [
       "images/WMZ_7Hz-Line.jpg",
       "images/WMZ_7Hz-Oscilations.jpg"
@@ -477,20 +492,25 @@
       {
         "name": "Silverton Wind Farm",
         "coordinates": "-31.806460, 141.268603",
+        "icon_type": "Wind Farm",
         "guilty": true 
       },
       {
         "name": "Broken Hill solar Plant",
         "coordinates": "-31.985218, 141.394265",
-        "guilty": true },
+        "icon_type": "Solar Farm",
+        "guilty": true 
+      },
       { 
         "name": "Buronga",
         "coordinates": "-34.1034147317411, 142.25964671449267",
+        "icon_type": "Substation",
         "guilty": true 
       },
       { 
         "name": "Kerang", 
-        "coordinates": "-35.7714288180139, 143.9348538918743", 
+        "coordinates": "-35.7714288180139, 143.9348538918743",
+        "icon_type": "Substation", 
         "guilty": true 
       }
     ],
@@ -536,7 +556,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Weak grid followed by torsional resonance",
     "mitigation_measures": "Adjusting the control parameters of GSC and PLL",
-    "possible_mechanism": "~",
+    "possible_mechanism": "PLL Instability",
     "images": [
       "images/One-line_Xinjiang_China_NW.png",
       "images/Frequency_Xinjiang_China_NW.png"
@@ -570,7 +590,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Not recorded",
     "mitigation_measures": "Bypassing FSCs when SSR is detected",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Unknown",
     "images": [
       "images/GuyuanWindFarm_Hebei_China.png",
       "images/GuyuanWindFarm_Hebei_China_waveform.png",
@@ -605,7 +625,7 @@
     "method": "No analysis, just plots",
     "purported": "There was a concern about the potential of similar interactions should a wind power plant become isolated on a series-compensated line.",
     "mitigation_measures": "Tune new voltage control parameters",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/oregon_map.png",
       "images/oregon_1.png",
@@ -640,7 +660,7 @@
     "method": "FFT from data",
     "purported": "Grid disturbances may excite one or a group of these sub-synchronous frequencies to begin to oscillate during high wind periods",
     "mitigation_measures": "Power curtailment and tune new WPP power control parameters",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Unknown ",
     "images": [
       "images/og&e_map.png",
       "images/og&e_2012.png",
@@ -675,7 +695,7 @@
     "method": "Not recorded",
     "purported": "Weak grid",
     "mitigation_measures": "Enhance the system strength or voltage controller tuning ",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Outer Loop - V Control",
     "images": [
       "images/One_line_diagram_CREZ.png",
       "images/Voltage_response_CREZ.png",
@@ -709,7 +729,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Induction Generator Effect: interaction between DFIG circuit and RLC circuit.",
     "mitigation_measures": "Decrease of capacitive compensation to 30%. Addition of subsynchronoous damping controllers.",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/Ajo_line.jpg",
       "images/Ajo_oscillation.jpg"
@@ -725,16 +745,19 @@
       {
         "name": "Lon Hill",
         "coordinates": "27.842723, -97.614613",
+        "icon_type": "Substation",
         "guilty": false
       },
       {
         "name": "Ajo",
         "coordinates": "27.092287, -97.774934",
+        "icon_type": "Substation",
         "guilty": true
       },
       {
         "name": "Rio Hondo",
         "coordinates": "26.278575, -97.612171",
+        "icon_type": "Substation",
         "guilty": false
       }
     ],
@@ -775,7 +798,7 @@
     "method": "Transient simulation with EMT models, Modal analysis",
     "purported": "Induction Generator Effect (rotor vs. RLC)",
     "mitigation_measures": "Protective Relays",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Induction Generator Effect",
     "images": [
       "images/One_line_Minnesota.png",
       "images/Oscillation_Minnesota.png"
@@ -808,7 +831,7 @@
     "method": "Transient simulation with EMT models, Eigenvalue analysis",
     "purported": "Interaction of STATCOM with weak grid.  Grid strength and number of STATCOM have an impact.",
     "mitigation_measures": "Avoid situations leading to a weak interconnection, i.e. avoid outage of one of the two lines",
-    "possible_mechanism": "~",
+    "possible_mechanism": "Unknown ",
     "images": [
       "images/HVDC_China_Yunnan_Guangxi_line.jpg",
       "images/HVDC_China_Yunnan_Guangxi_Oscillation.jpg"
@@ -841,7 +864,7 @@
     "method": "Transient simulation with EMT models",
     "purported": "Controls and dynamic behavior of a particular asset. Problems with phase-locked loops",
     "mitigation_measures": "Reduction of output. After solution, returned to service",
-    "possible_mechanism": "~",
+    "possible_mechanism": "PLL Instability",
     "images": [
       "images/Scotland_North_Line.png",
       "images/Scotland_North_Ocillations.png"
@@ -875,7 +898,7 @@
     "method": "Data-driven identification of modes",
     "purported": "Outer loop control, particularly P loop. Interaction with DC side.",
     "mitigation_measures": "~",
-    "possible_mechanism": "~",
+    "possible_mechanism": "DC and AC sides energy unbalance",
     "images": [
       "images/USA_Virginia_Line.png",
       "images/USA_Virginia_Oscillations.png"
@@ -908,7 +931,7 @@
     "method": "Not detailed in the report",
     "purported": "Incorrect protection settings at Hornsea and Little Barford. Also controls at Hornsea. ",
     "mitigation_measures": "Retuning and revision of protection settings",
-    "possible_mechanism": "~",
+    "possible_mechanism": "LVRT",
     "images": [
       "images/Hornsea_line.png",
       "images/Hornsea_Oscillations.png"
