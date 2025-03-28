@@ -1205,6 +1205,73 @@
     "grid": "United Kingdom, England, Wales, and Scotland",
     "points": [],
     "connections": []
-  }
-
+  },
+  {
+    "id": 21,
+    "country": "Finland",
+    "Region_state": "Finland",
+    "europe": true,
+    "repetitive": false,
+    "last_observation": "2022/06",
+    "trigger": "~",
+    "duration": "9 hours",
+    "frequency": "5-6",
+    "involved_devices": "Wind farm - Type IV",
+    "propagation": "Propagated across Finland",
+    "distance": "500 km",
+    "radius": 500,
+    "outages": "~",
+    "identification": "PMU Data",
+    "method": "WAMS analysis",
+    "purported": "SSCI involving wind farms and series compensated lines",
+    "mitigation_measures": "Continuous monitoring using PMU",
+    "possible_mechanism": "Wind farm and series compenseated line",
+    "images": [
+      "images/Finland.png",
+      "images/Finland_T4_Oscillation_1.png",
+      "images/Finland_T4_Oscillation_2.png"
+    ],
+    "links": [
+      "https://energiforsk.se/media/33835/1_fingrid_subsynchronous_oscillations_in_finnish_power_system_clean.pdf"
+    ],
+    "coordinates": "65.25378015396215, 26.837415433883105",
+    "first_observation": "2022/06",
+    "grid": "Finland",
+    "points": [],
+    "connections": []
+  },
+  {
+    "id": 22,
+    "country": "Finland",
+    "Region_state": "Finland",
+    "europe": true,
+    "repetitive": true,
+    "last_observation": "2023/02",
+    "trigger": "~",
+    "duration": "15 minutes",
+    "frequency": "26-28",
+    "involved_devices": "Wind farm - Type III",
+    "propagation": "Propagated across Finland",
+    "distance": "500 km",
+    "radius": 500,
+    "outages": "~",
+    "identification": "PMU Data",
+    "method": "WAMS analysis",
+    "purported": "SSCI involving wind farms and series compensated lines during low power output",
+    "mitigation_measures": "Continuous monitoring using PMU",
+    "possible_mechanism": "Wind farm and series compenseated line",
+    "images": [
+      "images/Finland.png",
+      "images/Finland_T3_Oscillation_1.png",
+      "images/Finland_T3_Oscillation_2.png"
+    ],
+    "links": [
+      "https://energiforsk.se/media/33835/1_fingrid_subsynchronous_oscillations_in_finnish_power_system_clean.pdf"
+    ],
+    "coordinates": "65.25378015396215, 26.837415433883105",
+    "first_observation": "2023/02",
+    "grid": "Finland",
+    "points": [],
+    "connections": []
+  },
 ]
