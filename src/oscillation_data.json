@@ -165,37 +165,37 @@
       {
         "from": "Fatehgarh I",
         "to": "Fatehgarh II",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Fatehgarh II",
         "to": "Bhadla",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Fatehgarh II",
         "to": "Bhadla-II",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Bhadla",
         "to": "Bhadla-II",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Bhadla",
         "to": "Bikaner",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Bhadla-II",
         "to": "Bikaner",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Fatehgarh I",
         "to": "2",
-        "color": "blue"
+        "color": "gray"
       }
     ]
   },
@@ -266,22 +266,22 @@
       {
         "from": "Red Cliffs Substation",
         "to": "Wemen Solar Farm",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Wemen Solar Farm",
         "to": "Kiamal Solar Farm",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Kiamal Solar Farm",
         "to": "Murray River Solar Farm",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Murray River Solar Farm",
         "to": "Broken Hill Solar Plant",
-        "color": "red"
+        "color": "gray"
       }
     ]
   },
@@ -402,37 +402,37 @@
       {
         "from": "Papalote Creek Wind Farm 2",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Papalote Creek Wind Farm 1",
         "to": "Lon Hill",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Midway Wind",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Cranell Wind Farm",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Karankawa Wind",
         "to": "El Algodon Alto Wind Farm",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "El Algodon Alto Wind Farm",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Lon Hill",
         "to": "Edinburg",
-        "color": "blue"
+        "color": "gray"
       }
     ]
   },
@@ -558,37 +558,37 @@
       {
         "from": "Papalote Creek Wind Farm 2",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Papalote Creek Wind Farm 1",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Midway Wind",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Cranell Wind Farm",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Karankawa Wind",
         "to": "El Algodon Alto Wind Farm",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "El Algodon Alto Wind Farm",
         "to": "Lon Hill",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Lon Hill",
         "to": "Edinburg",
-        "color": "blue"
+        "color": "gray"
       }
     ]
   },
@@ -677,37 +677,37 @@
       {
         "from": "Papalote Creek Wind Farm 2",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Papalote Creek Wind Farm 1",
         "to": "Lon Hill",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Midway Wind",
         "to": "Papalote Creek Wind Farm 1",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Cranell Wind Farm",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Karankawa Wind",
         "to": "El Algodon Alto Wind Farm",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "El Algodon Alto Wind Farm",
         "to": "Lon Hill",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Lon Hill",
         "to": "Edinburg",
-        "color": "blue"
+        "color": "gray"
       }
     ]
   },
@@ -773,22 +773,22 @@
       { 
         "from": "Silverton Wind Farm", 
         "to": "Broken Hill solar Plant",  
-        "color": "red" 
+        "color": "gray" 
       },
       { 
         "from": "Broken Hill solar Plant", 
         "to": "Buronga", 
-        "Kerang": "red" 
+        "Kerang": "gray" 
       },
       { 
         "from": "Buronga", 
         "to": "Kerang", 
-        "color": "red"
+        "color": "gray"
       },
       { 
         "from": "Broken Hill solar Plant", 
         "to": "9", 
-        "color": "blue"
+        "color": "gray"
       }
     ]
   },
@@ -1026,17 +1026,17 @@
       {
         "from": "Ajo",
         "to": "Lon Hill",
-        "color": "red"
+        "color": "gray"
       },
       {
         "from": "Ajo",
         "to": "Rio Hondo",
-        "color": "orange"
+        "color": "gray"
       },
       {
         "from": "Ajo",
         "to": "Gulf wind",
-        "color": "red"
+        "color": "gray"
       }
     ]
   },
