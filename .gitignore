@@ -1,5 +1,7 @@
 #Ignorar secrets
 
+#ignorar certificats
+src/certs/
 # Ignorar entorno virtual
 src/venv/
 
