@@ -162,4 +162,9 @@ def download_excel():
 if __name__ == "__main__":
     port_flask = int(os.getenv("FLASK_RUN_PORT", 8080))  # Toma el puerto del .env o usa 8080 por defecto
     host_flask = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Toma el host del .env o usa 0.0.0.0 por defecto
-    app.run(debug=True, host=host_flask, port=port_flask)
+    # Usar rutas absolutas a los certificados
+    ssl_context = (
+        'certs/fullchain.pem',
+        'certs/privkey.pem'
+    )
+    app.run(debug=True, host=host_flask, port=port_flask, ssl_context=ssl_context)
