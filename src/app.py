@@ -164,7 +164,8 @@ if __name__ == "__main__":
     host_flask = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Toma el host del .env o usa 0.0.0.0 por defecto
     # Usar rutas absolutas a los certificados
     ssl_context = (
-        'certs/fullchain.pem',
-        'certs/privkey.pem'
+        os.path.abspath(os.path.join(os.path.dirname(__file__), 'certs/fullchain.pem')),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), 'certs/privkey.pem'))
     )
+
     app.run(debug=True, host=host_flask, port=port_flask, ssl_context=ssl_context)
