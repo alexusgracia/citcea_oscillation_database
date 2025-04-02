@@ -1025,8 +1025,92 @@
     "coordinates": "35.25557, -101.1361 ",
     "first_observation": "2011/01",
     "grid": "USA, Texas",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Panhandle Wind Project",
+        "coordinates": "35.416428748599174, -101.22946773284131",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
+        "name": "Asarco Substation",
+        "coordinates": "35.28540610595221, -101.73066351205084",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Oklaunion Substation",
+        "coordinates": "34.08283529978634, -99.17810120609462",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Escalade Wind Farm",
+        "coordinates": "33.746457879215306, -99.6654337619544",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
+        "name": "Aviator Wind",
+        "coordinates": "31.815538161875065, -100.69127193931365",
+        "icon_type": "wind",
+        "guilty": true
+      },
+      {
+        "name": "Austin substation",
+        "coordinates": "30.315259067826734, -97.8547524419021",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Sherbino Wind Farm",
+        "coordinates": "30.89053252758235, -102.39984150440283",
+        "icon_type": "wind",
+        "guilty": true
+      }
+    ],
+    "connections": [
+      {
+        "from": "Panhandle Wind Project",
+        "to": "Asarco Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Panhandle Wind Project",
+        "to": "Oklaunion Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Asarco Substation",
+        "to": "Escalade Wind Farm",
+        "color": "gray"
+      },
+      {
+        "from": "Escalade Wind Farm",
+        "to": "Oklaunion Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Escalade Wind Farm",
+        "to": "Aviator Wind",
+        "color": "gray"
+      },
+      {
+        "from": "Aviator Wind",
+        "to": "Austin substation",
+        "color": "gray"
+      },
+      {
+        "from": "Aviator Wind",
+        "to": "Sherbino Wind Farm",
+        "color": "gray"
+      },
+      {
+        "from": "Sherbino Wind Farm",
+        "to": "Austin substation",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 15,
