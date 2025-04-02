@@ -315,8 +315,71 @@
     "coordinates": "31.843366, -102.296395",
     "first_observation": "2021/05",
     "grid": "USA, Texas",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Phoebe forst solar",
+        "coordinates": "31.842868451942746, -102.86845548952242",
+        "icon_type": "solar",
+        "guilty": true
+      },
+      {
+        "name": "Bearkat wind",
+        "coordinates": "31.757517160666193, -101.66618626774653",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Sweetwater Wind Farm",
+        "coordinates": "31.757517160666193, -101.66618626774653",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "San Andres Substation",
+        "coordinates": "32.2164246216064, -102.49516513794097",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Cunningham Substation",
+        "coordinates": "32.724439862093895, -103.35482869986399",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Greasewood Solar Project",
+        "coordinates": "31.03805675571341, -102.48390434438065",
+        "icon_type": "solar",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      {
+        "from": "Phoebe forst solar",
+        "to": "Bearkat wind",
+        "color": "gray"
+      },
+      {
+        "from": "Phoebe forst solar",
+        "to": "San Andres Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Bearkat wind",
+        "to": "Sweetwater Wind Farm",
+        "color": "gray"
+      },
+      {
+        "from": "San Andres Substation",
+        "to": "Cunningham Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Cunningham Substation",
+        "to": "Greasewood Solar Project",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 5,
