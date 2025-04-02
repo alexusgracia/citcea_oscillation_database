@@ -1170,8 +1170,60 @@
     "coordinates": "37.525750, -77.448361",
     "first_observation": "2020/07",
     "grid": "USA, Virginia",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Bedford Solar Center",
+        "coordinates": "36.697223688075596, -76.17117303177248",
+        "icon_type": "solar",
+        "guilty": false
+      },
+{
+        "name": "Dominion Energy - Fentress Substation",
+        "coordinates": "36.6919429253031, -76.1891242090584",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Dominion Energy - Yadkin Substation",
+        "coordinates": "36.77022536358671, -76.35362649693198",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Midlothian Substation",
+        "coordinates": "37.50296409524861, -77.70528895464328",
+        "icon_type": "substation",
+        "guilty": true
+      },
+      {
+        "name": "Bremo Substation",
+        "coordinates": "37.71015433765302, -78.28704659074137",
+        "icon_type": "substation",
+        "guilty": true
+      }
+    ],
+    "connections": [
+      {
+        "from": "Bedford Solar Center",
+        "to": "Dominion Energy - Fentress Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Dominion Energy - Fentress Substation",
+        "to": "Dominion Energy - Yadkin Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Dominion Energy - Yadkin Substation",
+        "to": "Midlothian Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Midlothian Substation",
+        "to": "Bremo Substation",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 20,
