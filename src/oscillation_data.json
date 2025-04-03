@@ -1423,8 +1423,38 @@
     "coordinates": "53.638405383827326, -0.30179291534274105",
     "first_observation": "2019/08",
     "grid": "United Kingdom, England, Wales, and Scotland",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Hornsea Offshore Wind Farm",
+        "coordinates": "53.96642728448614, -0.03848713687208887",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Little Barford",
+        "coordinates": "52.2063969201011, -0.2685025336192183",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Wymondley Substation",
+        "coordinates": "51.9285304306443, -0.24596358644156935",
+        "icon_type": "substation",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      {
+        "from": "Hornsea Offshore Wind Farm",
+        "to": "Little Barford",
+        "color": "gray"
+      },
+      {
+        "from": "Little Barford",
+        "to": "Wymondley Substation",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 21,
