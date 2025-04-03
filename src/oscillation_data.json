@@ -956,7 +956,14 @@
     "coordinates": "45.6375, -120.605278",
     "first_observation": "2011/05",
     "grid": "USA, Northeast Oregon",
-    "points": [],
+    "points": [
+      {
+        "name": "Biglow Canyon Wind Farm",
+        "coordinates": "45.6375, -120.605278",
+        "icon_type": "wind",
+        "guilty": true
+      }
+    ],
     "connections": []
   },
   {
@@ -991,7 +998,14 @@
     "coordinates": "34.89896708898615, -98.57519897165932",
     "first_observation": "2011/12",
     "grid": "USA, Oklahoma",
-    "points": [],
+    "points": [
+      {
+        "name": "Blue Canyon Windpower",
+        "coordinates": "34.89896708898615, -98.57519897165932",
+        "icon_type": "wind",
+        "guilty": true
+      }
+    ],
     "connections": []
   },
   {
