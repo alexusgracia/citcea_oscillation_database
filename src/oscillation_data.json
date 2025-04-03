@@ -1228,10 +1228,17 @@
     "links": [
       "https://resourcecenter.ieee-pes.org/publications/technical-reports/pes_tp_tr80_amps_wsso_070920"
     ],
-    "coordinates": "43.52308, -92.52046055",
+    "coordinates": "43.621187354940254, -92.59856150700715",
     "first_observation": "2007/10",
     "grid": "USA, Minnesota",
-    "points": [],
+    "points": [
+      {
+        "name": "Xcel Energy Mower County Wind Farm",
+        "coordinates": "43.621187354940254, -92.59856150700715",
+        "icon_type": "wind",
+        "guilty": true
+      }
+    ],
     "connections": []
   },
   {
