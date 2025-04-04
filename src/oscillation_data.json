@@ -1439,7 +1439,7 @@
     "links": [
       "https://www.neso.energy/document/152346/download"
     ],
-    "coordinates": "52.05141818520098, -0.20767523401275234",
+    "coordinates": "53.638405383827326, -0.30179291534274105",
     "first_observation": "2019/08",
     "grid": "United Kingdom, England, Wales, and Scotland",
     "points": [
@@ -1540,7 +1540,103 @@
     "coordinates": "63.305614527120085, 24.94257783715194",
     "first_observation": "2023/02",
     "grid": "Finland",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Möksyn tuulivoimapuisto",
+        "coordinates": "63.00624547166976, 24.373692152869634",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Alajärven sähköasema Substation",
+        "coordinates": "63.03244732847235, 24.166991367780124",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Pikkarala sähköasema",
+        "coordinates": "64.91774774377323, 25.737867285171884",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Isokangas sähköasema",
+        "coordinates": "65.26640644305178, 25.69504839683111",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Tuomela sähköasema",
+        "coordinates": "65.55824908685125, 25.604636768226836",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Pirttikoski sähköasema",
+        "coordinates": "66.33946726366345, 27.140229700917043",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Rauma sähköasema",
+        "coordinates": "61.152392104492115, 21.623620137396774",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Kangasalan sähköasema",
+        "coordinates": "61.49679205153356, 23.976077170378815",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Toivilan sähköasema",
+        "coordinates": "61.89287314468664, 25.128629864706788",
+        "icon_type": "substation",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      {
+        "from": "Möksyn tuulivoimapuisto",
+        "to": "Alajärven sähköasema Substation",
+        "color": "gray"
+      },
+      {
+        "from": "Alajärven sähköasema Substation",
+        "to": "Pikkarala sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Isokangas sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Tuomela sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Pirttikoski sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Rauma sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Kangasalan sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Toivilan sähköasema",
+        "color": "gray"
+      }
+    ]
   }
 ]
