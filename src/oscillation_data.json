@@ -1305,8 +1305,27 @@
     "coordinates": "57.425222, -4.263278",
     "first_observation": "2021/08",
     "grid": "Scotland, North",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Hywind Offshore Wind Farm",
+        "coordinates": "57.499166301178604, -1.6939432161623154",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Peterhead Substation",
+        "coordinates": "57.477720205664646, -1.8026416340052989",
+        "icon_type": "substation",
+        "guilty": true
+      }
+    ],
+    "connections": [
+      {
+        "from": "Hywind Offshore Wind Farm",
+        "to": "Peterhead Substation",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 19,
