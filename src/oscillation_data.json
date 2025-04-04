@@ -1503,11 +1503,107 @@
     "links": [
       "https://energiforsk.se/media/33835/1_fingrid_subsynchronous_oscillations_in_finnish_power_system_clean.pdf"
     ],
-    "coordinates": "65.00670434066613, 25.889883793953896",
+    "coordinates": "64.00670434066613, 24.889883793953896",
     "first_observation": "2022/06",
     "grid": "Finland",
-    "points": [],
-    "connections": []
+    "points": [
+      {
+        "name": "Isonevan tuulivoimapuisto",
+        "coordinates": "64.75149988991944, 24.792140018492773",
+        "icon_type": "wind",
+        "guilty": false
+      },
+      {
+        "name": "Siikajoki sähköasema",
+        "coordinates": "64.6795864839863, 25.06231236772104",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Pikkarala sähköasema",
+        "coordinates": "64.91774774377323, 25.737867285171884",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Isokangas sähköasema",
+        "coordinates": "65.26640644305178, 25.69504839683111",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Tuomela sähköasema",
+        "coordinates": "65.55824908685125, 25.604636768226836",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Pirttikoski sähköasema",
+        "coordinates": "66.33946726366345, 27.140229700917043",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Rauma sähköasema",
+        "coordinates": "61.152392104492115, 21.623620137396774",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Kangasalan sähköasema",
+        "coordinates": "61.49679205153356, 23.976077170378815",
+        "icon_type": "substation",
+        "guilty": false
+      },
+      {
+        "name": "Toivilan sähköasema",
+        "coordinates": "61.89287314468664, 25.128629864706788",
+        "icon_type": "substation",
+        "guilty": false
+      }
+    ],
+    "connections": [
+      {
+        "from": "Isonevan tuulivoimapuisto",
+        "to": "Siikajoki sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Siikajoki sähköasema",
+        "to": "Pikkarala sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Isokangas sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Tuomela sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Pirttikoski sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Rauma sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Kangasalan sähköasema",
+        "color": "gray"
+      },
+      {
+        "from": "Pikkarala sähköasema",
+        "to": "Toivilan sähköasema",
+        "color": "gray"
+      }
+    ]
   },
   {
     "id": 22,
