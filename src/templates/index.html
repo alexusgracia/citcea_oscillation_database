@@ -234,15 +234,17 @@
             height: 40px;
             /* Ajusta este valor según necesites */
         }
+
         .side-panel {
             position: fixed;
             top: 67px;
-            right: -300px; /* Oculto inicialmente */
+            right: -300px;
+            /* Oculto inicialmente */
             width: 350px;
             height: 79%;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: right 0.3s ease;
             z-index: 1200;
             overflow-y: auto;
@@ -252,7 +254,8 @@
         }
 
         .side-panel.open {
-            right: 5px; /* Se despliega en la vista */
+            right: 5px;
+            /* Se despliega en la vista */
             display: block;
         }
 
@@ -291,6 +294,7 @@
             font-size: 24px;
             cursor: pointer;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -515,7 +519,7 @@
                     let radius = parseFloat(entry.radius) * 1000 || 50000; // 50km if there's no value
                     marker.on('click', function () {
                         clearMap();
-                        let aux_coords = [coords[0] , coords[1] +1];
+                        let aux_coords = [coords[0], coords[1] + 1];
                         openSidePanel(sidePanelContent);
                         map.setView(aux_coords, 8);
                         activeCircle = L.circle(coords, {
@@ -578,7 +582,7 @@
                                         default:
                                             selectedIcon = iconStation; // Valor por defecto si no coincide
                                     }
-                                    subMarker = L.marker(pointCoords, {icon: selectedIcon}).addTo(map).bindPopup(`<b>${point.name}</b>`);
+                                    subMarker = L.marker(pointCoords, { icon: selectedIcon }).addTo(map).bindPopup(`<b>${point.name}</b>`);
 
                                 }
 
@@ -641,7 +645,10 @@
             document.getElementById('fullscreen-image').style.display = 'none';
         }
 
-        map.on('click', clearMap);
+        map.on('click', function () {
+            clearMap();
+            closeSidePanel();
+        });
     </script>
     <div id="side-panel" class="side-panel">
         <div class="side-panel-header">
