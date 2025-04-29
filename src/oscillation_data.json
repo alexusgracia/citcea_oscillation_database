@@ -1734,5 +1734,35 @@
         "color": "gray"
       }
     ]
+  },
+  {
+    "id": 23,
+    "country": "Spain",
+    "Region_state": "Spain",
+    "europe": true,
+    "repetitive": true,
+    "last_observation": "2025/04",
+    "trigger": "Unknown (not identified yet)",
+    "duration": "15 minutes",
+    "frequency": "0.22 Hz",
+    "involved_devices": "Synchronous machine",
+    "propagation": "Propagated across Europe",
+    "distance": "1500 km",
+    "radius": 500,
+    "outages": "Solar Photovoltaic plants and Synchronous machines, Transmission lines",
+    "identification": "PMU Data",
+    "method": "~",
+    "purported": "Unknown (not identified yet)",
+    "mitigation_measures": "~",
+    "possible_mechanism": "~",
+    "images": [
+      "images/Spain_oscillation.jpg"
+    ],
+    "links": [],
+    "coordinates": "40.416, -3.70256",
+    "first_observation": "2025/04",
+    "grid": "Spain",
+    "points": [],
+    "connections": []
   }
 ]
