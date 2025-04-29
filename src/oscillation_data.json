@@ -819,38 +819,38 @@
         "icon_type": "solar",
         "guilty": true
       },
-      { 
+      {
         "name": "Buronga",
         "coordinates": "-34.1034147317411, 142.25964671449267",
         "icon_type": "substation",
         "guilty": true
       },
-      { 
-        "name": "Kerang", 
+      {
+        "name": "Kerang",
         "coordinates": "-35.7714288180139, 143.9348538918743",
-        "icon_type": "substation", 
-        "guilty": true 
+        "icon_type": "substation",
+        "guilty": true
       }
     ],
     "connections": [
-      { 
-        "from": "Silverton Wind Farm", 
-        "to": "Broken Hill solar Plant",  
-        "color": "gray" 
-      },
-      { 
-        "from": "Broken Hill solar Plant", 
-        "to": "Buronga", 
-        "Kerang": "gray" 
-      },
-      { 
-        "from": "Buronga", 
-        "to": "Kerang", 
+      {
+        "from": "Silverton Wind Farm",
+        "to": "Broken Hill solar Plant",
         "color": "gray"
       },
-      { 
-        "from": "Broken Hill solar Plant", 
-        "to": "9", 
+      {
+        "from": "Broken Hill solar Plant",
+        "to": "Buronga",
+        "Kerang": "gray"
+      },
+      {
+        "from": "Buronga",
+        "to": "Kerang",
+        "color": "gray"
+      },
+      {
+        "from": "Broken Hill solar Plant",
+        "to": "9",
         "color": "gray"
       }
     ]
@@ -1364,7 +1364,7 @@
         "icon_type": "solar",
         "guilty": false
       },
-{
+      {
         "name": "Dominion Energy - Fentress Substation",
         "coordinates": "36.6919429253031, -76.1891242090584",
         "icon_type": "substation",

@@ -13,7 +13,11 @@ app = Flask(__name__)
 
 # Archivo JSON donde se almacenarán los datos
 data_file = "oscillation_data.json"
-
+visits_file = "visits.json"
+if os.path.exists(visits_file):
+    with open(visits_file, "r") as f:
+        visits_data = json.load(f)
+        
 # Cargar los datos del archivo JSON si existe, si no, crear una lista vacía
 if os.path.exists(data_file):
     with open(data_file, "r") as f:
@@ -23,6 +27,9 @@ else:
 
 @app.route("/")
 def index():
+    visits_data["count"] += 1
+    with open(visits_file, "w") as f:
+        json.dump(visits_data, f, indent=4)
     return render_template("index.html")
 
 @app.route("/data")
