@@ -1,6 +1,7 @@
 #Ignorar secrets
 
 #ignorar certificats
+src/certs/*.pem
 src/certs/
 # Ignorar entorno virtual
 src/venv/
